@@ -10,16 +10,16 @@ const Wrapper = styled.div`
     width: 90%;
   }
   @media (min-width: 576px) and (max-width: 767.98px) {
-    width: 82.5%;
+    width: 85%;
   }
   @media (min-width: 768px) and (max-width: 991.98px) {
-    width: 75%;
+    width: 80%;
   }
   @media (min-width: 992px) and (max-width: 1199.98px) {
-    width: 67.5%;
+    width: 75%;
   }
   @media (min-width: 1200px) {
-    width: 60%;
+    width: 70%;
   }
 `;
 
@@ -141,7 +141,7 @@ const Contact = styled.button`
   border: 2px solid white;
   float: right;
   padding: 4px 8px;
-  margin-top: 0.6rem;
+  margin-top: 0.4rem;
   margin-right: 2.5rem;
   background-color: transparent;
   border-radius: 4px;
@@ -177,8 +177,7 @@ const Navigator = styled.div`
     display: block;
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
-    padding: 16px 20px;
-    margin-right: 0.8rem;
+    padding: 12px 16px;
     text-decoration: none;
     &:hover {
       color: #ffffff;

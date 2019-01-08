@@ -1,13 +1,13 @@
 /* global tw */
 import React from 'react';
 import styled from 'react-emotion';
+import { colors } from '../../../tailwind';
+import { content } from '../../content/website';
+import welcomeBackground from '../../images/background/img_main_background.png';
 import dCenOverview from '../../images/detail/img_dcen_overview.png';
 import dCenOrange from '../../images/logo/logo_dcen.png';
-import welcomeBackground from '../../images/background/img_main_background.png';
 import { Content, Hero, Subtitle, Wrapper } from '../../styles';
-import { content } from '../../content/website';
 import SVG from '../SVG';
-import { colors } from '../../../tailwind';
 
 const WelcomeSubtitle = styled(Subtitle)`
   margin-left: 2.5rem;
@@ -77,7 +77,7 @@ const EmailForm = styled.form`
 const Box = styled.div`
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10rem;
+  margin-top: 5rem;
   @media (max-width: 575.98px) {
     width: 90%;
     margin-top: 2.5rem;
