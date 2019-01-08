@@ -9,7 +9,7 @@ const Menu = styled.div`
     display: inline-flex;
     justify-content: center;
     align-content: center;
-    font-size: 12px;
+    font-size: 2rem;
     flex-direction: row-reverse;
     width: 100%;
   }

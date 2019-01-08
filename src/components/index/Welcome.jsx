@@ -10,10 +10,12 @@ import { Content, Hero, Subtitle, Wrapper } from '../../styles';
 import SVG from '../SVG';
 
 const WelcomeSubtitle = styled(Subtitle)`
-  margin-left: 2.5rem;
+  font-size: 1.8rem;
+  margin-left: 3.6rem;
   @media (max-width: 575.98px) {
     margin-left: 0;
-    font-size: 16px;
+    margin-top: 4rem;
+    text-align: center;
   }
 `;
 
@@ -23,41 +25,41 @@ const WelcomeHero = styled(Hero)`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 4rem;
   }
 `;
 
 const DcenOrangeImage = styled.img`
   @media (max-width: 575.98px) {
-    width: 75%;
+    width: 50%;
   }
 `;
 
 const EmailInput = styled.input`
   font-family: avenirnext-regular, fantasy;
+  font-size: 1.4rem;
   border: none;
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
-  width: 24em;
-  padding-left: 1.5em;
+  width: 32rem;
+  padding-left: 1.2rem;
   height: inherit;
-  font-size: 0.875em;
   &:focus {
     outline: none;
   }
   @media (max-width: 575.98px) {
     padding-left: 1em;
-    font-size: 0.75em;
   }
 `;
 
 const EmailButton = styled.button`
   font-family: akrobat-bold, fantasy;
-  font-size: 1.125em;
+  font-size: 1.8rem;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   color: white;
   background-color: orange;
-  width: 8em;
+  width: 10rem;
   height: inherit;
   border: none;
 `;
@@ -65,12 +67,15 @@ const EmailButton = styled.button`
 const EmailForm = styled.form`
   ${tw('w-full justify-center items-center flex')};
   text-align: start;
-  height: 2.625em;
+  width: 42rem;
+  height: 4.2rem;
   margin-bottom: auto;
   background-color: white;
   border-radius: 8px;
   @media (max-width: 575.98px) {
-    margin-bottom: 10rem;
+    margin-top: 12rem;
+    margin-right: auto;
+    margin-left: auto;
   }
 `;
 
@@ -80,7 +85,7 @@ const Box = styled.div`
   margin-top: 5rem;
   @media (max-width: 575.98px) {
     width: 90%;
-    margin-top: 2.5rem;
+    margin-top: 3.2rem;
   }
 `;
 
@@ -88,8 +93,8 @@ export const Welcome = () => (
   <Content
     speed={window.outerWidth < 575.98 ? 0.3 : 0.6}
     offset={0}
-    factor={window.outerWidth < 575.98 ? 1 : 0.75}
-    style={{ backgroundImage: `url(${welcomeBackground})`, backgroundSize: 'cover' }}
+    factor={window.outerWidth < 575.98 ? 0.75 : 1}
+    style={{ backgroundImage: `url(${welcomeBackground})`, backgroundSize: 'cover'}}
   >
     <Wrapper style={{ display: 'flex', flexWrap: 'wrap' }}>
       <WelcomeHero>
@@ -112,6 +117,6 @@ export const Welcome = () => (
         </EmailForm>
       </Box>
     </Wrapper>
-    <SVG icon="scrollDown" hiddenMobile fill={colors.white} width={8} left="50%" top="90%" />
+    <SVG icon="scrollDown" hiddenMobile fill={colors.white} width={16} left="50%" top="80%" />
   </Content>
 );

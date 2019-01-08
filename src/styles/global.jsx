@@ -15,6 +15,10 @@ injectGlobal`
     background-color: #161719;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 10px;
+    @media (max-width: 575.98px) {
+    font-size: 6px;
+    }
   }
   html, body {
     @font-face {

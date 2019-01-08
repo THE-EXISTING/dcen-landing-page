@@ -114,7 +114,7 @@ const Avatar = styled.img`
 `;
 
 const Logo = styled.img`
-  padding: 14px;
+  margin-top: 2.2rem;
   float: left;
 `;
 
@@ -137,14 +137,14 @@ const ContactText = styled.p`
 const Contact = styled.button`
   ${tw('text-white')};
   font-family: akrobat-bold, fantasy;
-  font-size: 16px;
-  border: 2px solid white;
+  font-size: 1.2rem;
+  border: 1px solid white;
   float: right;
   padding: 4px 8px;
-  margin-top: 0.4rem;
-  margin-right: 2.5rem;
+  margin-top: 2rem;
   background-color: transparent;
   border-radius: 4px;
+  text-transform: uppercase;
   @media (max-width: 575.98px) {
     margin-right: 0;
   }
@@ -167,23 +167,26 @@ const Footer = styled.footer`
 `;
 
 const Navigator = styled.div`
+  height: auto;
   background-color: transparent;
   font-family: akrobat-bold, fantasy;
   text-transform: uppercase;
   overflow: hidden;
   top: 0;
   a {
+    margin-top: 2.4rem;
+    font-size: 1.4rem;
     float: right;
     display: block;
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
-    padding: 12px 16px;
+    margin-right: 3.2rem;
     text-decoration: none;
     &:hover {
       color: #ffffff;
       cursor: pointer;
       border-bottom: 2px solid #e79627;
-      padding-bottom: 0.3rem;
+      padding-bottom: 0.2rem;
     }
     @media (max-width: 575.98px) {
       margin-right: 0;

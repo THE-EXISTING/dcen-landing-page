@@ -1,9 +1,9 @@
 /* global tw */
 import React from 'react';
 import styled from 'react-emotion';
-import { Content, OrangeSpan, Wrapper } from '../../styles';
 import { content } from '../../content/website';
 import visionBackground from '../../images/background/img_vision_background.jpg';
+import { Content, OrangeSpan, Wrapper } from '../../styles';
 
 const VisionsContent = styled.div`
   ${tw('text-white')};
@@ -17,33 +17,32 @@ const VisionsContent = styled.div`
 
 const VisionBlock = styled.div`
   ${tw('justify-center items-center flex z-50')};
-  background-color: black;
-  opacity: 0.85;
+  background-color: #0f0900;
+  opacity: 0.9;
   height: inherit;
 `;
 
-const VisionsHeading = styled.h1`
+const VisionsHeading = styled.p`
   font-family: akrobat-bold, fantasy;
+  font-size: 3.2rem;
 `;
 
 const VisionsParagraph = styled.p`
   font-family: avenirnext-regular, fantasy;
-  font-size: 18px;
-  @media (max-width: 575.98px) {
-    font-size: 14px;
-  }
+  font-size: 1.8rem;
 `;
 
-const Creator = styled.h3`
+const Creator = styled.p`
   font-family: avenirnext-demi, fantasy;
   float: right;
+  font-size: 1.8rem;
 `;
 
 export const Visions = () => (
   <Content
-    speed={window.outerWidth < 575.98 ? 0.375 : 0.75}
-    offset={0.8}
-    factor={0.7}
+    speed={window.outerWidth < 575.98 ? 0.3 : 0.6}
+    offset={window.outerWidth < 575.98 ? 0.75 : 0.95}
+    factor={0.5}
     style={{ backgroundImage: `url(${visionBackground})`, backgroundSize: 'cover' }}
   >
     <VisionBlock>
