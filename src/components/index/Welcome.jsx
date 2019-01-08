@@ -39,8 +39,8 @@ const EmailInput = styled.input`
   font-family: avenirnext-regular, fantasy;
   font-size: 1.4rem;
   border: none;
-  border-top-left-radius: 16px;
-  border-bottom-left-radius: 16px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   width: 32rem;
   padding-left: 1.2rem;
   height: inherit;
@@ -55,8 +55,8 @@ const EmailInput = styled.input`
 const EmailButton = styled.button`
   font-family: akrobat-bold, fantasy;
   font-size: 1.8rem;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   color: white;
   background-color: orange;
   width: 10rem;
@@ -71,7 +71,7 @@ const EmailForm = styled.form`
   height: 4.2rem;
   margin-bottom: auto;
   background-color: white;
-  border-radius: 8px;
+  border-radius: 4px;
   @media (max-width: 575.98px) {
     margin-top: 12rem;
     margin-right: auto;
