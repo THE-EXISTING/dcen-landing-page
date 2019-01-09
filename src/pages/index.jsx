@@ -9,7 +9,11 @@ import { Content } from '../styles';
 import '../styles/global';
 
 class Index extends Component {
-  state = { scrollTop: 0 };
+  state = { scrollTop: 0, width: 0 };
+
+  componentDidMount() {
+    this.setState({ width: window.outerWidth });
+  }
 
   handelScroll(event) {
     this.setState({ scrollTop: event.target.scrollTop });
@@ -23,10 +27,10 @@ class Index extends Component {
         <div onScroll={event => this.handelScroll(event)}>
           <Navbar scrollTop={scrollTop} />
           <Parallax pages={3}>
-            <Content speed={window.outerWidth < 575.98 ? 0.3 : 0.75} offset={0} factor={1}>
+            <Content speed={this.state.width < 575.98 ? 0.3 : 0.75} offset={0} factor={1}>
               <Welcome />
             </Content>
-            <Content speed={window.outerWidth < 575.98 ? 0.45 : 0.9} offset={0.95} factor={1}>
+            <Content speed={this.state.width < 575.98 ? 0.45 : 0.9} offset={0.95} factor={1}>
               <Visions />
               <Communities />
             </Content>
