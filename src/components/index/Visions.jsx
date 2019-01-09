@@ -3,10 +3,9 @@ import React from 'react';
 import styled from 'react-emotion';
 import { content } from '../../content/website';
 import visionBackground from '../../images/background/img_vision_background.jpg';
-import { Content, OrangeSpan, Wrapper } from '../../styles';
+import { Heading, OrangeSpan, Wrapper } from '../../styles';
 
 const VisionsContent = styled.div`
-  ${tw('text-white')};
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -22,11 +21,6 @@ const VisionBlock = styled.div`
   height: inherit;
 `;
 
-const VisionsHeading = styled.p`
-  font-family: akrobat-bold, fantasy;
-  font-size: 3.2rem;
-`;
-
 const VisionsParagraph = styled.p`
   font-family: avenirnext-regular, fantasy;
   font-size: 1.8rem;
@@ -39,23 +33,18 @@ const Creator = styled.p`
 `;
 
 export const Visions = () => (
-  <Content
-    speed={window.outerWidth < 575.98 ? 0.3 : 0.6}
-    offset={window.outerWidth < 575.98 ? 0.75 : 0.95}
-    factor={0.5}
-    style={{ backgroundImage: `url(${visionBackground})`, backgroundSize: 'cover' }}
-  >
+  <div style={{ backgroundImage: `url(${visionBackground})`, backgroundSize: 'cover', height: '50vh' }}>
     <VisionBlock>
       <Wrapper>
         <VisionsContent>
-          <VisionsHeading>
+          <Heading>
             <OrangeSpan>{content.spanOfVision}</OrangeSpan>
             {` ${content.vision}`}
-          </VisionsHeading>
+          </Heading>
           <VisionsParagraph>{content.visionDescription}</VisionsParagraph>
           <Creator>{content.visionsCreator}</Creator>
         </VisionsContent>
       </Wrapper>
     </VisionBlock>
-  </Content>
+  </div>
 );

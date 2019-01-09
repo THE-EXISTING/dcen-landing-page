@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "prettier", "prettier/react"],
+  "extends": ["prettier", "prettier/react"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2017,
@@ -15,12 +15,6 @@
     "jquery": true
   },
   "rules": {
-    "no-unused-vars": [
-      1,
-      {
-        "argsIgnorePattern": "res|next|^err"
-      }
-    ],
     "arrow-body-style": [2, "as-needed"],
     "no-param-reassign": [
       2,

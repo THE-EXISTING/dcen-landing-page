@@ -6,7 +6,7 @@ import { content } from '../../content/website';
 import welcomeBackground from '../../images/background/img_main_background.png';
 import dCenOverview from '../../images/detail/img_dcen_overview.png';
 import dCenOrange from '../../images/logo/logo_dcen.png';
-import { Content, Hero, Subtitle, Wrapper } from '../../styles';
+import { FlexBox, Hero, Subtitle, Wrapper } from '../../styles';
 import SVG from '../SVG';
 
 const WelcomeSubtitle = styled(Subtitle)`
@@ -16,6 +16,14 @@ const WelcomeSubtitle = styled(Subtitle)`
     margin-left: 0;
     margin-top: 4rem;
     text-align: center;
+  }
+`;
+
+const WelcomeWrapper = styled(Wrapper)`
+  display: flex;
+  flex-wrap: wrap;
+  @media (max-width: 575.98px) {
+    margin-bottom: 0;
   }
 `;
 
@@ -82,7 +90,7 @@ const EmailForm = styled.form`
 const Box = styled.div`
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5rem;
+  margin-top: 12rem;
   @media (max-width: 575.98px) {
     width: 90%;
     margin-top: 3.2rem;
@@ -90,13 +98,8 @@ const Box = styled.div`
 `;
 
 export const Welcome = () => (
-  <Content
-    speed={window.outerWidth < 575.98 ? 0.3 : 0.6}
-    offset={0}
-    factor={window.outerWidth < 575.98 ? 0.75 : 1}
-    style={{ backgroundImage: `url(${welcomeBackground})`, backgroundSize: 'cover'}}
-  >
-    <Wrapper style={{ display: 'flex', flexWrap: 'wrap' }}>
+  <FlexBox style={{ backgroundImage: `url(${welcomeBackground})`, backgroundSize: 'cover', height: '100vh' }}>
+    <WelcomeWrapper>
       <WelcomeHero>
         <DcenOrangeImage src={dCenOrange} alt="D-cen Orange Logo" />
         <WelcomeSubtitle>
@@ -116,7 +119,7 @@ export const Welcome = () => (
           <EmailButton>{content.emailButton}</EmailButton>
         </EmailForm>
       </Box>
-    </Wrapper>
+    </WelcomeWrapper>
     <SVG icon="scrollDown" hiddenMobile fill={colors.white} width={16} left="50%" top="80%" />
-  </Content>
+  </FlexBox>
 );

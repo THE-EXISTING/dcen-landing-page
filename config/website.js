@@ -7,7 +7,7 @@ module.exports = {
   siteTitleAlt: 'D-cen', // Alternative Site title for SEO
   siteUrl: '', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
-  siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
+  siteLogo: '/logos/logo_dcen.png', // Used for SEO and manifest
   siteDescription:
     'Unlock all your restrictions to your first decentralized experience with us, the last jigsaw you need',
 

@@ -3,6 +3,11 @@ import styled from 'react-emotion';
 import { ParallaxLayer } from 'react-spring/dist/addons';
 import { rotate } from './animations';
 
+const Heading = styled.p`
+  font-family: akrobat-bold, fantasy;
+  font-size: 3.2rem;
+`;
+
 const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
@@ -116,6 +121,7 @@ const Avatar = styled.img`
 const Logo = styled.img`
   margin-top: 2.2rem;
   float: left;
+  transition: 0.6s;
 `;
 
 const AboutSub = styled.span`
@@ -166,38 +172,8 @@ const Footer = styled.footer`
   }
 `;
 
-const Navigator = styled.div`
-  height: auto;
-  background-color: transparent;
-  font-family: akrobat-bold, fantasy;
-  text-transform: uppercase;
-  overflow: hidden;
-  top: 0;
-  a {
-    margin-top: 2.4rem;
-    font-size: 1.4rem;
-    float: right;
-    display: block;
-    color: rgba(255, 255, 255, 0.7);
-    text-align: center;
-    margin-right: 3.2rem;
-    text-decoration: none;
-    &:hover {
-      color: #ffffff;
-      cursor: pointer;
-      border-bottom: 2px solid #e79627;
-      padding-bottom: 0.2rem;
-    }
-    @media (max-width: 575.98px) {
-      margin-right: 0;
-      padding: 8px 12px;
-    }
-  }
-`;
-
 export {
   Divider,
-  Navigator,
   Title,
   Content,
   AboutDesc,
@@ -219,4 +195,5 @@ export {
   OrangeSpan,
   Wrapper,
   FlexBox,
+  Heading,
 };
