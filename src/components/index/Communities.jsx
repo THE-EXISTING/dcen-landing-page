@@ -24,7 +24,7 @@ export const Communities = () => (
         <CommunitiesImage src={telegram} alt={'Telegram x DCEN'} />
       </FlexBox>
       <FlexBox style={{ width: '100%' }}>
-        <CommunitiesImage src={facebook} style={{ marginTop: '-6rem' }} alt={'Facebook x DCEN'} />
+        <CommunitiesImage src={facebook} style={{ marginTop: '1rem' }} alt={'Facebook x DCEN'} />
       </FlexBox>
     </FlexBox>
   </Wrapper>
