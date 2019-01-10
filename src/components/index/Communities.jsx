@@ -4,11 +4,33 @@ import styled from 'react-emotion';
 import facebook from '../../images/logo/Facebook.png';
 import mediumDcen from '../../images/logo/Medium DCEN.png';
 import telegram from '../../images/logo/Telegram.png';
-import { FlexBox, Heading, OrangeSpan, Wrapper } from '../../styles';
+import { Contact, FlexBox, Heading, OrangeSpan, Wrapper } from '../../styles';
 
 const CommunitiesImage = styled.img`
   border: 1px solid white;
   padding: 16px;
+  @media (max-width: 575.98px) {
+    width: 128px;
+  }
+`;
+
+const FacebookImage = styled(CommunitiesImage)`
+  margin-top: 2rem;
+  @media (min-height: 1000px) {
+    margin-top: -2rem;
+  }
+  @media (max-width: 575.98px) {
+    margin-top: -2.5rem;
+    width: 20rem;
+  }
+`;
+
+const CommunitiesContact = styled(Contact)`
+  padding: 12px 24px;
+  font-size: 2rem;
+  @media (max-width: 575.98px) {
+    padding: 6px 12px;
+  }
 `;
 
 export const Communities = () => (
@@ -24,8 +46,9 @@ export const Communities = () => (
         <CommunitiesImage src={telegram} alt={'Telegram x DCEN'} />
       </FlexBox>
       <FlexBox style={{ width: '100%' }}>
-        <CommunitiesImage src={facebook} style={{ marginTop: '1rem' }} alt={'Facebook x DCEN'} />
+        <FacebookImage src={facebook} alt={'Facebook x DCEN'} />
       </FlexBox>
+      <CommunitiesContact>Contact</CommunitiesContact>
     </FlexBox>
   </Wrapper>
 );

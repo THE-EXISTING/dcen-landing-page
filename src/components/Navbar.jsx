@@ -12,7 +12,7 @@ const Navigator = styled.div`
   text-transform: uppercase;
   z-index: 99;
   transition: 0.6s;
-  box-shadow: ${props => (props.scrollTop < 60 ? 'none' : '0 11px 10px -5px rgba(30, 30, 30, 0.9)')};
+  box-shadow: ${props => (props.scrollTop < 60 ? 'none' : '0 11px 10px -5px rgba(50, 50, 50, 0.25)')};
   a {
     margin-top: 2.4rem;
     font-size: 1.4rem;
@@ -37,12 +37,7 @@ const Navigator = styled.div`
 
 const Menu = styled.div`
   @media (max-width: 575.98px) {
-    display: inline-flex;
-    justify-content: center;
-    align-content: center;
-    font-size: 2rem;
-    flex-direction: row-reverse;
-    width: 100%;
+    display: none;
   }
 `;
 

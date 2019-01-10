@@ -3,16 +3,7 @@ import React from 'react';
 import styled from 'react-emotion';
 import { content } from '../../content/website';
 import visionBackground from '../../images/background/img_vision_background.jpg';
-import { Heading, OrangeSpan, Wrapper } from '../../styles';
-
-const VisionsContent = styled.div`
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  @media (max-width: 575.98px) {
-    width: 90%;
-  }
-`;
+import { DcenContent, Heading, OrangeSpan, Wrapper } from '../../styles';
 
 const VisionBlock = styled.div`
   ${tw('justify-center items-center flex z-50')};
@@ -36,14 +27,14 @@ export const Visions = () => (
   <div style={{ backgroundImage: `url(${visionBackground})`, backgroundSize: 'cover', height: '50vh' }}>
     <VisionBlock>
       <Wrapper>
-        <VisionsContent>
+        <DcenContent>
           <Heading>
             <OrangeSpan>{content.spanOfVision}</OrangeSpan>
             {` ${content.vision}`}
           </Heading>
           <VisionsParagraph>{content.visionDescription}</VisionsParagraph>
           <Creator>{content.visionsCreator}</Creator>
-        </VisionsContent>
+        </DcenContent>
       </Wrapper>
     </VisionBlock>
   </div>

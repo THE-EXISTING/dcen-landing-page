@@ -3,9 +3,18 @@ import styled from 'react-emotion';
 import { ParallaxLayer } from 'react-spring/dist/addons';
 import { rotate } from './animations';
 
-const Heading = styled.p`
+const Heading = styled.h1`
   font-family: akrobat-bold, fantasy;
   font-size: 3.2rem;
+`;
+
+const DcenContent = styled.div`
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 575.98px) {
+    width: 90%;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -196,4 +205,5 @@ export {
   Wrapper,
   FlexBox,
   Heading,
+  DcenContent,
 };
