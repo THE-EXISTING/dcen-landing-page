@@ -6,7 +6,7 @@ import { Visions } from '../components/index/Visions';
 import { Welcome } from '../components/index/Welcome';
 import { Navbar } from '../components/Navbar';
 import SEO from '../components/SEO';
-import { Content, Wrapper } from '../styles';
+import { Content } from '../styles';
 import '../styles/global';
 
 class Index extends Component {
@@ -27,21 +27,23 @@ class Index extends Component {
         <SEO />
         <div onScroll={event => this.handelScroll(event)}>
           <Navbar scrollTop={scrollTop} />
-          <Parallax pages={3}>
+          <Parallax pages={4}>
             <Content speed={this.state.width < 575.98 ? 0.375 : 0.75} offset={0} factor={1}>
               <Welcome />
             </Content>
             <Content speed={this.state.width < 575.98 ? 0.45 : 0.9} offset={0.95} factor={1}>
               <Visions />
+            </Content>
+            <Content speed={this.state.width < 575.98 ? 0.45 : 0.9} offset={1} factor={1}>
               <Communities />
             </Content>
             <Content
-              speed={this.state.width < 575.98 ? 0.3 : 0.6}
-              offset={this.state.width < 575.98 ? 1.5 : 1.2}
+              speed={this.state.width < 575.98 ? 0.2 : 0.4}
+              offset={this.state.width < 575.98 ? 1.5 : 1.89}
               factor={1}
+              style={{ backgroundColor: '#1A1A18' }}
             >
               <Product />
-              <Wrapper style={{ height: '50vh' }} />
             </Content>
           </Parallax>
         </div>

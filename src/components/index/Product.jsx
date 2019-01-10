@@ -36,7 +36,7 @@ const ProductImage = styled.img`
 `;
 
 export const Product = () => (
-  <Wrapper style={{ height: '50vh' }}>
+  <Wrapper style={{ height: 'auto' }}>
     <DcenContent style={{ height: '100%', display: 'flex' }}>
       <ProductContent>
         <Heading>
@@ -54,7 +54,7 @@ export const Product = () => (
         <div>
           <ProductImage src={googlePlay} role={'button'} alt={'Download our app on Google Play'} />
           <ProductImage
-            style={{ marginTop: '2rem' }}
+            style={{ marginTop: window.outerHeight > 1000 ? '5.5rem' : '7.5rem' }}
             src={appStore}
             role={'button'}
             alt={'Download our app on App Store'}

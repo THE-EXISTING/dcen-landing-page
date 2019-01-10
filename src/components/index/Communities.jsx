@@ -9,19 +9,20 @@ import { Contact, FlexBox, Heading, OrangeSpan, Wrapper } from '../../styles';
 const CommunitiesImage = styled.img`
   border: 1px solid white;
   padding: 16px;
+  width: 240px;
   @media (max-width: 575.98px) {
     width: 128px;
   }
 `;
 
 const FacebookImage = styled(CommunitiesImage)`
-  margin-top: 2rem;
-  @media (min-height: 1000px) {
-    margin-top: -2rem;
-  }
+  margin-top: -4rem;
   @media (max-width: 575.98px) {
     margin-top: -2.5rem;
     width: 20rem;
+  }
+  @media (min-height: 1000px) {
+    margin-top: -11rem;
   }
 `;
 
@@ -34,7 +35,7 @@ const CommunitiesContact = styled(Contact)`
 `;
 
 export const Communities = () => (
-  <Wrapper style={{ height: '50vh' }}>
+  <Wrapper style={{ height: '75vh' }}>
     <FlexBox style={{ height: '-webkit-fill-available', flexWrap: 'wrap' }}>
       <FlexBox style={{ width: '100%' }}>
         <Heading>
