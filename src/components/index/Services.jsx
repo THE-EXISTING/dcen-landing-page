@@ -21,7 +21,7 @@ const VisionBlock = styled.div`
 
 const VisionsParagraph = styled.p`
   font-family: avenirnext-regular, fantasy;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 `
 
 const Creator = styled.p`
@@ -72,7 +72,8 @@ export const Services = () => (
     style={{
       backgroundImage: `url(${consult})`,
       backgroundSize: 'cover',
-      height: '50vh'
+      height: '100%',
+      width: '100%'
     }}
   >
     <VisionBlock>
@@ -96,7 +97,7 @@ export const Services = () => (
                 src={BlockChain}
                 role={'button'}
                 alt={'BlockChain'}
-                style={{ height: '300px' }}
+                style={{ height: 'auto', width: '100%' }}
               />
             </div>
           </ProductContent>

@@ -163,6 +163,7 @@ const Contact = styled.button`
   float: right;
   padding: 4px 8px;
   margin-top: 2rem;
+  cursor: pointer;
   background-color: transparent;
   border-radius: 4px;
   text-transform: uppercase;

@@ -11,6 +11,6 @@ import {
 
 export const Working = () => (
   <WaveWrapper>
-    <DcenContent>Hello</DcenContent>
+    <DcenContent></DcenContent>
   </WaveWrapper>
 )
