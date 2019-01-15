@@ -45,7 +45,7 @@ export const Navbar = ({ scrollTop }) => (
   <Navigator scrollTop={scrollTop}>
     <Wrapper>
       <div>
-        <Logo src={dCenWhite} alt="D-cen White Logo" width={scrollTop < 60 ? 75 : 50} />
+        <Logo src={dCenWhite} alt="D-cen White Logo" width={scrollTop < 60 ? 60 : 50} />
       </div>
       <Contact href="#">Contact</Contact>
       <Menu>

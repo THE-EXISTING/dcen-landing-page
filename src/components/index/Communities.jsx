@@ -1,19 +1,21 @@
+/* eslint-disable prettier/prettier */
 /* global tw */
-import React from 'react';
-import styled from 'react-emotion';
-import facebook from '../../images/logo/Facebook.png';
-import mediumDcen from '../../images/logo/Medium DCEN.png';
-import telegram from '../../images/logo/Telegram.png';
-import { Contact, FlexBox, Heading, OrangeSpan, Wrapper } from '../../styles';
+import React from 'react'
+import styled from 'react-emotion'
+import facebook from '../../images/logo/Facebook.png'
+import mediumDcen from '../../images/logo/Medium DCEN.png'
+import telegram from '../../images/logo/Telegram.png'
+import { Contact, FlexBox, Heading, OrangeSpan, Wrapper } from '../../styles'
 
 const CommunitiesImage = styled.img`
-  border: 1px solid white;
+  border: 2px solid gray;
+  border-radius: 0.5rem;
   padding: 16px;
   width: 240px;
   @media (max-width: 575.98px) {
     width: 128px;
   }
-`;
+`
 
 const FacebookImage = styled(CommunitiesImage)`
   margin-top: -4rem;
@@ -24,7 +26,7 @@ const FacebookImage = styled(CommunitiesImage)`
   @media (min-height: 1000px) {
     margin-top: -11rem;
   }
-`;
+`
 
 const CommunitiesContact = styled(Contact)`
   padding: 12px 24px;
@@ -32,7 +34,7 @@ const CommunitiesContact = styled(Contact)`
   @media (max-width: 575.98px) {
     padding: 6px 12px;
   }
-`;
+`
 
 export const Communities = () => (
   <Wrapper style={{ height: '75vh' }}>
@@ -43,7 +45,11 @@ export const Communities = () => (
         </Heading>
       </FlexBox>
       <FlexBox style={{ width: '100%' }}>
-        <CommunitiesImage src={mediumDcen} style={{ marginRight: '2rem' }} alt={'Medium x DCEN'} />
+        <CommunitiesImage
+          src={mediumDcen}
+          style={{ marginRight: '2rem' }}
+          alt={'Medium x DCEN'}
+        />
         <CommunitiesImage src={telegram} alt={'Telegram x DCEN'} />
       </FlexBox>
       <FlexBox style={{ width: '100%' }}>
@@ -52,4 +58,4 @@ export const Communities = () => (
       <CommunitiesContact>Contact</CommunitiesContact>
     </FlexBox>
   </Wrapper>
-);
+)
