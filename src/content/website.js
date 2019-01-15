@@ -15,5 +15,5 @@ export const content = {
     'to blockchain technology."',
   visionsCreator: '-DCEN Team-',
   productDescription:
-    'Complication prevents new users from using cryptocurrencies. Scandals on software hacking scare users from trusting software wallet. We aim to prevent both and create Dellet.',
-};
+    'Complication prevents new users from using cryptocurrencies. Scandals on software hacking scare users from trusting software wallet. We aim to prevent both and create Dellet.'
+}
