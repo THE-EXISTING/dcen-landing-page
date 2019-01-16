@@ -7,6 +7,7 @@
   "dependencies": {
     "babel-plugin-tailwind": "^0.1.10",
     "emotion": "^9.2.12",
+    "emotion-media-query": "^1.0.1",
     "emotion-server": "^9.2.12",
     "gatsby": "^2.0.35",
     "gatsby-image": "^2.0.19",
@@ -26,6 +27,7 @@
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
     "react-scroll": "^1.7.10",
+    "react-slick": "^0.23.2",
     "react-spring": "^6.1.8",
     "tailwindcss": "^0.6.6",
     "typeface-cantata-one": "^0.0.54",
