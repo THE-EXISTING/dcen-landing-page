@@ -15,7 +15,10 @@ const CommunitiesImage = styled.img`
   @media (max-width: 575.98px) {
     width: 128px;
   }
-`
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 const FacebookImage = styled(CommunitiesImage)`
   margin-top: -4rem;
@@ -25,6 +28,9 @@ const FacebookImage = styled(CommunitiesImage)`
   }
   @media (min-height: 1000px) {
     margin-top: -11rem;
+  }
+  &:hover {
+    cursor: pointer;
   }
 `
 

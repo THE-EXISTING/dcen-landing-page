@@ -135,6 +135,10 @@ const Logo = styled.img`
   margin-top: 2.2rem;
   float: left;
   transition: 0.6s;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 11px 10px -5px rgba(50, 50, 50, 1);
+  }
 `
 
 const AboutSub = styled.span`
@@ -172,6 +176,12 @@ const Contact = styled.button`
   }
   &:focus {
     outline: none;
+    background-color: white;
+    color: black;
+  }
+  &:hover {
+    background-color: white;
+    color: black;
   }
 `
 

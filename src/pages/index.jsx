@@ -9,6 +9,8 @@ import { Services } from '../components/index/Services'
 import { Working } from '../components/index/Working'
 import { Footer } from '../components/index/Footer'
 import { Navbar } from '../components/Navbar'
+import { Element } from 'react-scroll'
+
 import SEO from '../components/SEO'
 import { Content } from '../styles'
 import '../styles/global'
@@ -21,7 +23,8 @@ class Index extends Component {
   }
 
   handelScroll = event => {
-    this.setState({ scrollTop: event.target.scrollTop })
+    const { scrollTop } = event.target
+    this.setState({ scrollTop: scrollTop })
   }
 
   render () {
@@ -31,13 +34,19 @@ class Index extends Component {
         <SEO />
         <div onScroll={event => this.handelScroll(event)}>
           <Navbar scrollTop={scrollTop} />
-          <Parallax pages={5}>
+          <Parallax scrolling>
             <Welcome />
-            <Visions />
-            <Communities />
-            <Product />
+            <Element name='visions'>
+              <Visions />
+            </Element>
+            <Element name='communities'>
+              <Communities />
+            </Element>
+            <Element name='product'>
+              <Product />
+            </Element>
             <Services />
-            <Working />
+            {/* <Working /> */}
             {/* <Footer /> */}
           </Parallax>
         </div>

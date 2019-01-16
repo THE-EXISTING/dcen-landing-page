@@ -64,8 +64,13 @@ export const Product = () => (
           <ProductHeading>
             <span style={{ color: 'orange' }}>F</span>irst Product
           </ProductHeading>
-          <div>
-            <ProductImage src={dellet} role={'logo'} alt={'Dellet Logo'} />
+          <div style={{ height: '100%', width: '100%' }}>
+            <ProductImage
+              src={dellet}
+              role={'logo'}
+              alt={'Dellet Logo'}
+              style={{ height: '50%' }}
+            />
           </div>
           <ProductParagraph>{content.productDescription}</ProductParagraph>
         </ProductContent>
@@ -93,7 +98,7 @@ export const Product = () => (
           <ProductHeading>
             <BlueSpan>Arch</BlueSpan>itecture
           </ProductHeading>
-          <Hero style={{ width: '100%', textAlign: 'center' }}>
+          <Hero style={{ width: '100%', height: '100%', textAlign: 'center' }}>
             <ProductImage
               src={imgArch}
               role={'button'}

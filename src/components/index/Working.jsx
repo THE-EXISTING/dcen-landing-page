@@ -11,6 +11,10 @@ import {
 
 export const Working = () => (
   <WaveWrapper>
-    <DcenContent></DcenContent>
+    <DcenContent>
+      <div>
+        Services
+      </div>
+    </DcenContent>
   </WaveWrapper>
 )

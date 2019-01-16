@@ -73,7 +73,8 @@ export const Services = () => (
       backgroundImage: `url(${consult})`,
       backgroundSize: 'cover',
       height: '100%',
-      width: '100%'
+      width: '100%',
+      zIndex: 100
     }}
   >
     <VisionBlock>

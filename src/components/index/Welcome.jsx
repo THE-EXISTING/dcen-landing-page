@@ -89,7 +89,7 @@ const EmailForm = styled.form`
 `
 const ScrollDownContainer = styled.div`
   position: absolute;
-  top: 67rem;
+  top: 70rem;
   cursor: pointer;
   z-index: 2;
   animation: MoveUpDown 0.5s infinite alternate;
@@ -123,7 +123,7 @@ export const Welcome = () => (
       height: '100vh'
     }}
   >
-    <WelcomeWrapper style={{ marginTop: '-20rem' }}>
+    <WelcomeWrapper style={{ marginTop: '-10rem' }}>
       <WelcomeHero>
         <DcenOrangeImage src={dCenOrange} alt='D-cen Orange Logo' />
         <WelcomeSubtitle>
