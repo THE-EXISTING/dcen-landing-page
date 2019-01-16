@@ -137,7 +137,10 @@ const Logo = styled.img`
   transition: 0.6s;
   cursor: pointer;
   &:hover {
-    box-shadow: 0 11px 10px -5px rgba(50, 50, 50, 1);
+    color: #ffffff;
+    cursor: pointer;
+    border-bottom: 2px solid #e79627;
+    padding-bottom: 0.3rem;
   }
 `
 

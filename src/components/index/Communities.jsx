@@ -12,13 +12,15 @@ const CommunitiesImage = styled.img`
   border-radius: 0.5rem;
   padding: 16px;
   width: 240px;
+  transition: 0.3s;
   @media (max-width: 575.98px) {
     width: 128px;
   }
   &:hover {
     cursor: pointer;
+    border: 2px solid white;
   }
-`;
+`
 
 const FacebookImage = styled(CommunitiesImage)`
   margin-top: -4rem;

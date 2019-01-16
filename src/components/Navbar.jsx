@@ -11,7 +11,8 @@ const Navigator = styled.div`
   width: 100%;
   position: fixed;
 
-  background-color: ${props => props.scrollTop < 60 ? 'transparent' : 'rgba(0, 0, 0,0.8)'};
+  background-color: ${props =>
+    props.scrollTop < 60 ? 'transparent' : 'rgba(0, 0, 0,0.9)'};
   font-family: akrobat-bold, fantasy;
   text-transform: uppercase;
   z-index: 99;

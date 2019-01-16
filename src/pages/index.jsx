@@ -1,13 +1,16 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react'
 import { Parallax } from 'react-spring/dist/addons'
-import { Communities } from '../components/index/Communities'
-import { Product } from '../components/index/Product'
-import { Visions } from '../components/index/Visions'
-import { Welcome } from '../components/index/Welcome'
-import { Services } from '../components/index/Services'
-import { Working } from '../components/index/Working'
-import { Footer } from '../components/index/Footer'
+import { Commander } from '../components/index/Commander'
+import {
+  Footer,
+  Product,
+  Services,
+  Welcome,
+  Visions,
+  Communities,
+  Contact
+} from '../components/index'
 import { Navbar } from '../components/Navbar'
 import { Element } from 'react-scroll'
 
@@ -46,8 +49,9 @@ class Index extends Component {
               <Product />
             </Element>
             <Services />
-            {/* <Working /> */}
-            {/* <Footer /> */}
+            <Commander />
+            <Contact />
+            <Footer />
           </Parallax>
         </div>
       </React.Fragment>
