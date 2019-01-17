@@ -1,6 +1,6 @@
 /* global tw */
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'react-emotion';
 import { width as twWidth } from '../../tailwind';
 import { hidden } from '../styles/utils';
@@ -13,6 +13,16 @@ const Wrapper = styled.svg`
   fill: ${props => props.fill};
   left: ${props => props.left};
   top: ${props => props.top};
+  cursor: ${props => props.cursor};
+  animation: MoveUpDown 0.5s infinite alternate;
+  @keyframes MoveUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
 `;
 
 const icons = {
@@ -30,7 +40,7 @@ const icons = {
   },
 };
 
-const SVG = ({ stroke, fill, width, icon, left, top, className, hiddenMobile }) => (
+const SVG = ({ stroke, fill, width, icon, left, top, className, hiddenMobile, cursor }) => (
   <Wrapper
     viewBox={icons[icon].viewBox}
     stroke={stroke}
@@ -40,6 +50,7 @@ const SVG = ({ stroke, fill, width, icon, left, top, className, hiddenMobile }) 
     top={top}
     className={className}
     hiddenMobile={hiddenMobile}
+    cursor={cursor}
   >
     {icons[icon].shape}
   </Wrapper>
@@ -56,6 +67,7 @@ SVG.propTypes = {
   top: PropTypes.string,
   className: PropTypes.string,
   hiddenMobile: PropTypes.bool,
+  cursor: PropTypes.string
 };
 
 SVG.defaultProps = {

@@ -1,14 +1,14 @@
 /* eslint-disable prettier/prettier */
 /* global tw */
-import React from 'react'
-import styled from 'react-emotion'
-import { colors } from '../../../tailwind'
-import { content } from '../../content/website'
-import welcomeBackground from '../../images/background/img_main_background.png'
-import dCenOverview from '../../images/detail/img_dcen_overview.png'
-import dCenOrange from '../../images/logo/logo_dcen.png'
-import { FlexBox, Hero, Subtitle, Wrapper } from '../../styles'
-import SVG from '../SVG'
+import React from 'react';
+import styled from 'react-emotion';
+import { colors } from '../../../tailwind';
+import { content } from '../../content/website';
+import welcomeBackground from '../../images/background/img_main_background.png';
+import dCenOverview from '../../images/detail/img_dcen_overview.png';
+import dCenOrange from '../../images/logo/logo_dcen.png';
+import { FlexBox, Hero, Subtitle, Wrapper } from '../../styles';
+import SVG from '../SVG';
 
 const WelcomeSubtitle = styled(Subtitle)`
   font-size: 1.8rem;
@@ -86,24 +86,7 @@ const EmailForm = styled.form`
     margin-right: auto;
     margin-left: auto;
   }
-`
-const ScrollDownContainer = styled.div`
-  position: absolute;
-  top: 70rem;
-  cursor: pointer;
-  z-index: 2;
-  animation: MoveUpDown 0.5s infinite alternate;
-  opacity: 0.6;
-
-  @keyframes MoveUpDown {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-10px);
-    }
-  }
-`
+`;
 
 const Box = styled.div`
   margin-left: auto;
@@ -123,7 +106,7 @@ export const Welcome = () => (
       height: '100vh'
     }}
   >
-    <WelcomeWrapper style={{ marginTop: '-10rem' }}>
+    <WelcomeWrapper>
       <WelcomeHero>
         <DcenOrangeImage src={dCenOrange} alt='D-cen Orange Logo' />
         <WelcomeSubtitle>
@@ -152,15 +135,13 @@ export const Welcome = () => (
         </EmailForm>
       </Box>
     </WelcomeWrapper>
-    <ScrollDownContainer>
-      <SVG
-        icon='scrollDown'
-        hiddenMobile
-        fill={colors.white}
-        width={16}
-        left='50%'
-        top='80%'
-      />
-    </ScrollDownContainer>
+    <SVG
+      icon='scrollDown'
+      hiddenMobile
+      fill={colors.white}
+      width={16}
+      left='50%'
+      top='90%'
+    />
   </FlexBox>
 )

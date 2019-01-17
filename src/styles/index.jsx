@@ -1,8 +1,8 @@
-/* eslint-disable prettier/prettier */
 /* global tw */
-import styled from 'react-emotion'
-import { ParallaxLayer } from 'react-spring/dist/addons'
-import { rotate } from './animations'
+/* eslint-disable prettier/prettier */
+import styled from 'react-emotion';
+import { ParallaxLayer } from 'react-spring/dist/addons';
+import { rotate } from './animations';
 
 const Heading = styled.h1`
   font-family: akrobat-bold, fantasy;
