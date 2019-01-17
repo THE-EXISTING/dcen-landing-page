@@ -11,7 +11,7 @@ class Index extends Component {
   state = { scrollTop: 0, width: 0, parallax: undefined };
 
   componentDidMount () {
-    this.setState({ width: window.outerWidth })
+    this.setState({ width: window.outerWidth, height: window.outerHeight })
   }
 
   handelScroll = event => {
@@ -34,7 +34,7 @@ class Index extends Component {
             <Communities/>
           </Element>
           <Element name='product'>
-            <Product/>
+            <Product height={this.state.height}/>
           </Element>
           <Element name='services'>
             <Services/>

@@ -1,23 +1,16 @@
 /* eslint-disable prettier/prettier */
 /* global tw */
-import React from 'react'
-import styled from 'react-emotion'
-import { content } from '../../content/website'
-import appStore from '../../images/logo/appstore.png'
-import dellet from '../../images/logo/dellet.png'
-import googlePlay from '../../images/logo/googleplay.png'
-import imgArch from '../../images/detail/img_architecture_chart.png'
-import timeline from '../../images/detail/img_delete_timeline.png'
-import delletproduct from '../../images/detail/img_dellet_product.png'
+import React from 'react';
+import styled from 'react-emotion';
+import { content } from '../../content/website';
+import imgArch from '../../images/detail/img_architecture_chart.png';
+import timeline from '../../images/detail/img_delete_timeline.png';
+import delletproduct from '../../images/detail/img_dellet_product.png';
+import appStore from '../../images/logo/appstore.png';
+import dellet from '../../images/logo/dellet.png';
+import googlePlay from '../../images/logo/googleplay.png';
 
-import {
-  DcenContent,
-  Heading,
-  OrangeSpan,
-  Wrapper,
-  BlueSpan,
-  Hero
-} from '../../styles'
+import { BlueSpan, DcenContent, Heading, Hero, OrangeSpan, Wrapper } from '../../styles';
 
 const ProductHeading = styled.h2`
   font-family: avenirnext-medium, fantasy;
@@ -86,7 +79,7 @@ const ProductImageArch = styled.img`
   }
 `
 
-export const Product = () => (
+export const Product = ({height}) => (
   <div
     style={{
       backgroundColor: '#1A1A18',
@@ -123,7 +116,7 @@ export const Product = () => (
             />
             <ProductImage
               style={{
-                marginTop: window.outerHeight > 1000 ? '5.5rem' : '7.5rem',
+                marginTop: height > 1000 ? '5.5rem' : '7.5rem',
                 cursor: 'pointer'
               }}
               src={appStore}
