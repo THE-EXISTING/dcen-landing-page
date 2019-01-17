@@ -1,7 +1,7 @@
 /* global tw */
 import React, { Component } from 'react';
 import styled from 'react-emotion';
-import { Events, Link, scroller } from 'react-scroll';
+import { Link } from 'react-scroll';
 import dCenWhite from '../images/logo/logo_dcen_white.png';
 import { Contact, Logo, Wrapper } from '../styles';
 
@@ -48,22 +48,6 @@ class Navbar extends Component {
     isActive: false,
     isScrollDown: false,
   };
-  componentDidMount() {
-    Events.scrollEvent.register('begin', function(to, element) {
-      console.log('begin', to, element);
-    });
-  }
-  componentWillUnmount() {
-    Events.scrollEvent.remove('begin');
-  }
-
-  scrollTo(to) {
-    scroller.scrollTo(to, {
-      duration: 800,
-      delay: 0,
-      smooth: true,
-    });
-  }
   render() {
     return (
       <Navigator scrollTop={this.props.scrollTop && this.props.scrollTop}>
@@ -73,33 +57,19 @@ class Navbar extends Component {
           </div>
           <Contact>Contact</Contact>
           <Menu>
-            <Link
-              to="commanders"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              duration={500}
-              onClick={() => this.scrollTo('commanders')}
-            >
+            <Link to="commanders" activeClass="active" spy={true} smooth={'easeInQuad'} duration={500}>
               Team
             </Link>
-            <Link
-              to="services"
-              activeClass="active"
-              spy
-              smooth
-              duration={500}
-              onClick={() => this.scrollTo('services')}
-            >
+            <Link to="services" activeClass="active" spy smooth={'easeInQuad'} duration={500}>
               Services
             </Link>
-            <Link to="product" activeClass="active" spy smooth duration={500}>
+            <Link to="product" activeClass="active" spy smooth={'easeInQuad'} duration={500}>
               Product
             </Link>
-            <Link to="communities" activeClass="active" spy smooth duration={500}>
+            <Link to="communities" activeClass="active" spy smooth={'easeInQuad'} duration={500}>
               Communities
             </Link>
-            <Link activeClass="active" to="visions" spy smooth duration={500}>
+            <Link to="visions" activeClass="active" spy smooth={'easeInQuad'} duration={500}>
               Vision
             </Link>
           </Menu>
