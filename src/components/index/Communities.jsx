@@ -1,11 +1,11 @@
 /* eslint-disable prettier/prettier */
 /* global tw */
-import React from 'react'
-import styled from 'react-emotion'
-import facebook from '../../images/logo/Facebook.png'
-import mediumDcen from '../../images/logo/Medium DCEN.png'
-import telegram from '../../images/logo/Telegram.png'
-import { Contact, FlexBox, Heading, OrangeSpan, Wrapper } from '../../styles'
+import React from 'react';
+import styled from 'react-emotion';
+import facebook from '../../images/logo/Facebook.png';
+import mediumDcen from '../../images/logo/Medium DCEN.png';
+import telegram from '../../images/logo/Telegram.png';
+import { Contact, FlexBox, Heading, OrangeSpan, Wrapper } from '../../styles';
 
 const CommunitiesImage = styled.img`
   border: 2px solid gray;
@@ -27,9 +27,6 @@ const FacebookImage = styled(CommunitiesImage)`
   @media (max-width: 575.98px) {
     margin-top: -2.5rem;
     width: 20rem;
-  }
-  @media (min-height: 1000px) {
-    margin-top: -11rem;
   }
   &:hover {
     cursor: pointer;
