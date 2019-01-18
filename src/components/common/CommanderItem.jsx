@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 /* global tw */
 
 import media from 'emotion-media-query';
@@ -48,21 +47,6 @@ const FontAvenirContainer = styled.div`
   letter-spacing: 1px;
 `;
 
-const ImgOverlay = styled.img`
-  position: absolute;
-  width: 200px;
-  right: -100px;
-  bottom: 0;
-  opacity: 0.02;
-`;
-
-const ImgOverlayMobile = styled(ImgOverlay)`
-  display: none;
-  ${media.lessThan('medium')`
-    display: block;
-  `};
-`;
-
 const SocialContainer = styled.div`
   flex: 1;
   display: flex;
@@ -85,18 +69,18 @@ const ImgSocial = styled.img`
 `;
 class CommanderItem extends Component {
   state = {
-    isHover: false
+    isHover: false,
   };
 
   handleOnMouseHover = () => {
     this.setState({
-      isHover: true
+      isHover: true,
     });
   };
 
   handleOnMouseLeave = () => {
     this.setState({
-      isHover: false
+      isHover: false,
     });
   };
 
@@ -121,27 +105,28 @@ class CommanderItem extends Component {
     return (
       <CommanderItemContainer
         className="active-border"
+        onFocus={this.handleOnMouseHover}
         onMouseOver={this.handleOnMouseHover}
         onMouseLeave={this.handleOnMouseLeave}
       >
         <div>
-          <TeamImg src={img} isHover={isHover} activeSlide={activeSlide} />
+          <TeamImg src={img} alt={name + ' picture'} isHover={isHover} activeSlide={activeSlide} />
           <FontAvenirContainer>
-            <p
+            <h1
               style={{
                 fontSize: '1.6rem',
                 marginBottom: '0',
-                fontFamily: 'avenirnext-medium'
+                fontFamily: 'avenirnext-medium',
               }}
             >
               {nickname}
-            </p>
-            <p style={{ fontSize: '1.4rem', marginTop: '2px' }}>{name}</p>
+            </h1>
+            <h2 style={{ fontSize: '1.4rem', marginTop: '2px' }}>{name}</h2>
             <p
               style={{
                 fontSize: '2rem',
                 letterSpacing: '1.5px',
-                fontFamily: 'avenirnext-demi'
+                fontFamily: 'avenirnext-demi',
               }}
             >
               {position}
@@ -150,12 +135,7 @@ class CommanderItem extends Component {
         </div>
         <SocialContainer>
           {social.map((item, i) => (
-            <ImgSocial
-              key={item}
-              src={this.renderIcon(i)}
-              alt=""
-              onClick={() => this.openNewTab(item)}
-            />
+            <ImgSocial key={item} src={this.renderIcon(i)} alt="" onClick={() => this.openNewTab(item)} />
           ))}
         </SocialContainer>
         {/* {isHover && <ImgOverlay src='/static/Icon/Mascot.svg' alt='' />}

@@ -1,12 +1,13 @@
 /* global tw */
 import media from 'emotion-media-query';
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import styled from 'react-emotion';
+import { colors } from '../../../tailwind';
 import { content } from '../../content/website';
 import FooterWallpaper from '../../images/detail/img_footer_background.png';
 import dCenWhite from '../../images/logo/logo_dcen_white.png';
-import { Contact, Wrapper } from '../../styles';
+import { Contact, Hero, Wrapper } from '../../styles';
+import SVG from '../SVG';
 
 const VisionBlock = styled.div`
   ${tw('justify-center items-center flex z-50')};
@@ -23,7 +24,7 @@ const FooterContainer = styled.div`
 `;
 
 const Logo = styled.img`
-  margin-top: 2.2rem;
+  margin-top: 0.45rem;
   width: 10%;
 `;
 
@@ -41,6 +42,7 @@ const FooterContent = styled.div`
   margin-left: 2.8rem;
   width: 80%;
   display: flex;
+  flex-wrap: wrap;
 `;
 
 const EmailButton = styled.button`
@@ -58,7 +60,7 @@ const EmailButton = styled.button`
 const EmailForm = styled.form`
   ${tw('w-full justify-center items-center flex')};
   /* text-align: start; */
-  width: 33rem;
+  width: 50%;
   height: 3.5rem;
   /* margin-bottom: auto; */
   background-color: white;
@@ -66,13 +68,7 @@ const EmailForm = styled.form`
   @media (max-width: 575.98px) {
   }
 `;
-const Box = styled.div`
-  padding: 1.5rem 0 0 0;
-  @media (max-width: 575.98px) {
-    width: 90%;
-    margin-top: 3.2rem;
-  }
-`;
+
 const EmailInput = styled.input`
   font-family: avenirnext-regular, fantasy;
   font-size: 1.4rem;
@@ -91,46 +87,48 @@ const EmailInput = styled.input`
 `;
 
 const AddressContainer = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid;
-  padding: 0.5rem;
+  padding-bottom: 4rem;
   ${media.lessThan('medium')`
     flex-direction: column;
   `};
 `;
 
 const ContactContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  /* ${media.lessThan('medium')`
+  width: 50%;
+  display: contents;
+  ${media.lessThan('medium')`
     margin-top: 2.2rem;
     align-items: flex-start;
-  `}; */
-`;
-
-const ContactInfo = styled.div`
-  font-family: ProductSans-Regular, fantasy;
-  font-size: 2rem;
-  display: flex;
-  letter-spacing: 1.5px;
-
-  p {
-    margin-left: 1.2rem;
-  }
-
-  ${media.lessThan('medium')`
-    font-size: 1.6rem;
   `};
 `;
 
+const SVGContainer = styled.div`
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 2.5%;
+  & > svg {
+    margin-right: 1.2rem;
+  }
+`;
+
+const ContactFooter = styled(Contact)`
+  font-family: avenirnext-medium, fantasy;
+  font-size: 1.4rem;
+  margin-top: 0;
+  padding: 0 36px;
+`;
+
 const CopyRightsContainer = styled.div`
+  width: 100%;
   margin-top: 1.4rem;
   font-size: 1.4rem;
   display: flex;
   justify-content: space-between;
-
+  flex-wrap: wrap;
   ${media.lessThan('medium')`
     flex-direction: column;
     img {
@@ -139,34 +137,91 @@ const CopyRightsContainer = styled.div`
   `};
 `;
 
+const CopyRightEmail = styled.p`
+  font-family: avenirnext-medium, fantasy;
+  font-size: 2rem;
+  margin-top: 1rem;
+`;
+
 export const Footer = () => (
   <FooterContainer img={FooterWallpaper}>
     <VisionBlock>
       <Wrapper>
         <FooterTextContainer>
-          <Logo src={dCenWhite}/>
+          <Logo src={dCenWhite} alt="D-CEN White Logo" />
           <FooterContent>
             <AddressContainer>
-              <Box>
-                <EmailForm>
-                  <EmailInput
-                    type="email"
-                    required
-                    placeholder="Our newsletter subscription"
-                  />
-                  <EmailButton>{content.emailButton}</EmailButton>
-                </EmailForm>
-              </Box>
+              <EmailForm>
+                <EmailInput
+                  type="email"
+                  aria-label="If you feel interested about our D-CEN, Pleases enter your email. We will feed the latest news to you"
+                  required
+                  placeholder="Our newsletter subscription"
+                />
+                <EmailButton>{content.emailButton}</EmailButton>
+              </EmailForm>
               <ContactContainer>
-                <Contact>CONTACT</Contact>
-                <ContactInfo>
-                  <img src='/static/Icon/Email.svg' alt=''/>
-                  <a href='mailto:contact@existing.co?subject=Put your subject here...'>
-                    <p>contact@existing.co</p>
-                  </a>
-                </ContactInfo>
+                <SVGContainer>
+                  <SVG
+                    icon="tumblrCircle"
+                    cursor={'pointer'}
+                    fill={colors['orange-lightest']}
+                    hoverFill={colors.white}
+                    width={16}
+                    position={'relative'}
+                    transitionDuration={'500ms'}
+                    title={'You could click to go to our Tumblr.'}
+                  />
+                  <SVG
+                    icon="facebookCircle"
+                    cursor={'pointer'}
+                    fill={colors['orange-lightest']}
+                    hoverFill={colors.white}
+                    width={16}
+                    position={'relative'}
+                    transitionDuration={'500ms'}
+                    title={'You could click to go to our Facebook.'}
+                  />
+                  <SVG
+                    icon="mediumCircle"
+                    cursor={'pointer'}
+                    fill={colors['orange-lightest']}
+                    hoverFill={colors.white}
+                    width={16}
+                    position={'relative'}
+                    transitionDuration={'500ms'}
+                    title={'You could click to go to our Medium.'}
+                  />
+                </SVGContainer>
+                <ContactFooter>contact</ContactFooter>
               </ContactContainer>
             </AddressContainer>
+            <CopyRightsContainer>
+              <Hero>
+                <p>© 2020 DCEN. All Rights Reserved</p>
+              </Hero>
+              <Hero style={{ display: 'inline-flex', justifyContent: 'flex-end' }}>
+                <SVG
+                  icon="Email"
+                  fill={colors.white}
+                  hoverFill={colors.white}
+                  top={'-28%'}
+                  width={16}
+                  position={'relative'}
+                  title={'Our email icon.'}
+                />
+                <CopyRightEmail>contact@dcen.io</CopyRightEmail>
+                <SVG
+                  icon="IPFS"
+                  fill={colors.white}
+                  width={48}
+                  left={'9.5%'}
+                  top={'-35%'}
+                  position={'relative'}
+                  title={'Our product hosted by IPFS.'}
+                />
+              </Hero>
+            </CopyRightsContainer>
           </FooterContent>
         </FooterTextContainer>
       </Wrapper>

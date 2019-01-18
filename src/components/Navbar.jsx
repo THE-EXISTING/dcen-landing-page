@@ -1,5 +1,5 @@
 /* global tw */
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'react-emotion';
 import { Link } from 'react-scroll';
 import dCenWhite from '../images/logo/logo_dcen_white.png';
@@ -30,6 +30,12 @@ const Navigator = styled.div`
       border-bottom: 2px solid #e79627;
       padding-bottom: 0.2rem;
     }
+    &.active {
+      color: #ffffff;
+      cursor: pointer;
+      border-bottom: 2px solid #e79627;
+      padding-bottom: 0.2rem;
+    }
     @media (max-width: 575.98px) {
       margin-right: 0;
       padding: 8px 12px;
@@ -43,40 +49,30 @@ const Menu = styled.div`
   }
 `;
 
-class Navbar extends Component {
-  state = {
-    isActive: false,
-    isScrollDown: false,
-  };
-  render() {
-    return (
-      <Navigator scrollTop={this.props.scrollTop && this.props.scrollTop}>
-        <Wrapper>
-          <div>
-            <Logo src={dCenWhite} alt="D-cen White Logo" width={this.props.scrollTop < 60 ? 60 : 50} />
-          </div>
-          <Contact>Contact</Contact>
-          <Menu>
-            <Link to="commanders" activeClass="active" spy={true} smooth={'easeInQuad'} duration={500}>
-              Team
-            </Link>
-            <Link to="services" activeClass="active" spy smooth={'easeInQuad'} duration={500}>
-              Services
-            </Link>
-            <Link to="product" activeClass="active" spy smooth={'easeInQuad'} duration={500}>
-              Product
-            </Link>
-            <Link to="communities" activeClass="active" spy smooth={'easeInQuad'} duration={500}>
-              Communities
-            </Link>
-            <Link to="visions" activeClass="active" spy smooth={'easeInQuad'} duration={500}>
-              Vision
-            </Link>
-          </Menu>
-        </Wrapper>
-      </Navigator>
-    );
-  }
-}
-
-export default Navbar;
+export const Navbar = props => (
+  <Navigator scrollTop={props.scrollTop}>
+    <Wrapper>
+      <div>
+        <Logo src={dCenWhite} alt="D-cen White Logo" width={props.scrollTop < 60 ? 60 : 50} />
+      </div>
+      <Contact>Contact</Contact>
+      <Menu>
+        <Link to="commanders" activeClass="active" spy smooth={'easeInQuad'} duration={500}>
+          Team
+        </Link>
+        <Link to="services" activeClass="active" spy smooth={'easeInQuad'} duration={500} offset={-50}>
+          Services
+        </Link>
+        <Link to="product" activeClass="active" spy smooth={'easeInQuad'} duration={500} offset={-50}>
+          Product
+        </Link>
+        <Link to="communities" activeClass="active" spy smooth={'easeInQuad'} duration={500} offset={-50}>
+          Communities
+        </Link>
+        <Link to="visions" activeClass="active" spy smooth={'easeInQuad'} duration={500} offset={-50}>
+          Vision
+        </Link>
+      </Menu>
+    </Wrapper>
+  </Navigator>
+);
