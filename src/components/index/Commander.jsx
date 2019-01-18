@@ -14,21 +14,14 @@ const CommanderContainer = styled.div`
     justify-content: left;
   }
 `;
-const CommanderContainerMobile = styled.div`
-  display: none;
-  text-align: center;
-  @media only screen and (min-device-width: 480px) {
-  }
-`;
+
 const Content = styled.div`
   padding: 4rem 0 8rem 0;
 `;
 
-
-
 export class Commander extends React.Component {
   state = {
-    activeSlide: 0
+    activeSlide: 0,
   };
 
   render() {

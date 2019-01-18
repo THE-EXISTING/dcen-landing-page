@@ -20,7 +20,7 @@ const CommunitiesImage = styled.img`
     cursor: pointer;
     border: 2px solid white;
   }
-`
+`;
 
 const FacebookImage = styled(CommunitiesImage)`
   margin-top: -4rem;
@@ -31,7 +31,7 @@ const FacebookImage = styled(CommunitiesImage)`
   &:hover {
     cursor: pointer;
   }
-`
+`;
 
 const CommunitiesContact = styled(Contact)`
   padding: 12px 24px;
@@ -39,7 +39,7 @@ const CommunitiesContact = styled(Contact)`
   @media (max-width: 575.98px) {
     padding: 6px 12px;
   }
-`
+`;
 
 export const Communities = () => (
   <Wrapper style={{ height: '75vh' }}>
@@ -54,13 +54,18 @@ export const Communities = () => (
           src={mediumDcen}
           style={{ marginRight: '2rem' }}
           alt={'Medium x DCEN'}
+          role="button"
         />
-        <CommunitiesImage src={telegram} alt={'Telegram x DCEN'} />
+        <CommunitiesImage
+          src={telegram}
+          alt={'Telegram x DCEN'}
+          role="button"
+        />
       </FlexBox>
       <FlexBox style={{ width: '100%' }}>
-        <FacebookImage src={facebook} alt={'Facebook x DCEN'} />
+        <FacebookImage src={facebook} alt={'Facebook x DCEN'} role="button" />
       </FlexBox>
       <CommunitiesContact>Contact</CommunitiesContact>
     </FlexBox>
   </Wrapper>
-)
+);

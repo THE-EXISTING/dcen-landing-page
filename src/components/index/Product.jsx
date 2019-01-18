@@ -16,7 +16,7 @@ const ProductHeading = styled.h2`
   font-family: avenirnext-medium, fantasy;
   font-weight: 100;
   font-size: 2rem;
-`
+`;
 
 const ProductContent = styled.div`
   width: 50%;
@@ -26,19 +26,19 @@ const ProductContent = styled.div`
   & > * {
     margin-bottom: 4rem;
   }
-`
+`;
 
 const ProductParagraph = styled.p`
   font-family: avenirnext-regular, fantasy;
   font-size: 1.6rem;
-`
+`;
 
 const ProductImage = styled.img`
   display: block;
   @media (max-width: 575.98px) {
     width: 20rem;
   }
-`
+`;
 const ProductImageArch = styled.img`
   display: block;
   height: 493px;
@@ -48,7 +48,7 @@ const ProductImageArch = styled.img`
   }
 
   @media (min-width: 320px) {
-    /* smartphones, iPhone, portrait 480x320 phones */
+    /* smart phones, iPhone, portrait 480x320 phones */
     height: 100%;
     width: 100%;
   }
@@ -77,9 +77,9 @@ const ProductImageArch = styled.img`
     width: 817px;
     /* hi-res laptops and desktops */
   }
-`
+`;
 
-export const Product = ({height}) => (
+export const Product = ({ height }) => (
   <div
     style={{
       backgroundColor: '#1A1A18',
@@ -99,7 +99,6 @@ export const Product = ({height}) => (
           <div style={{ height: '100%', width: '100%' }}>
             <ProductImage
               src={dellet}
-              role={'logo'}
               alt={'Dellet Logo'}
               style={{ height: '50%' }}
             />
@@ -177,4 +176,4 @@ export const Product = ({height}) => (
       </Hero>
     </Wrapper>
   </div>
-)
+);

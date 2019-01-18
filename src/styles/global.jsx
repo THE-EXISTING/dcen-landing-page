@@ -36,11 +36,7 @@ injectGlobal`
     }
     @font-face {
       font-family: avenirnext-medium;
-      src: url("${withPrefix('/font/avenirnext_medium.ttf')}") format('truetype');
-    }
-    @font-face {
-      font-family: avenirnext-regular;
-      src: url("${withPrefix('/font/avenirnext_regular.ttf')}") format('truetype');
+      src: url("${withPrefix('/font/avenirnext_medium_.ttf')}") format('truetype');
     }
     width: 100%;
     height: 100%;
