@@ -1,3 +1,4 @@
+
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react'
 import { Element, scroll } from 'react-scroll'
@@ -62,8 +63,8 @@ class Index extends Component {
           <br />
         </div>
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default Index
+export default Index;

@@ -10,15 +10,16 @@ import dCenWhite from '../../images/logo/logo_dcen_white.png'
 import { Contact, Hero, Wrapper } from '../../styles'
 import SVG from '../SVG'
 
+
 const VisionBlock = styled.div`
   ${tw('justify-center items-center flex z-50')};
   background-color: rgba(0, 0, 0, 0.7);
   height: inherit;
-`
+`;
 
 const FooterContainer = styled.div`
   background-image: ${props => `url(${props.img})`};
-  height: 100%;
+  height: 50vh;
   font-family: avenirnext-medium, fantasy;
   background-size: cover;
   width: 100%;
@@ -26,11 +27,10 @@ const FooterContainer = styled.div`
     height: 100%;
   }
 `
-
 const Logo = styled.img`
   margin-top: 0.45rem;
   width: 10%;
-`
+`;
 
 const FooterTextContainer = styled.div`
   display: flex;
@@ -61,7 +61,7 @@ const EmailButton = styled.button`
   height: inherit;
   border: none;
   cursor: pointer;
-`
+`;
 const EmailForm = styled.form`
   ${tw('w-full justify-center items-center flex')};
   /* text-align: start; */
@@ -75,12 +75,10 @@ const EmailForm = styled.form`
   }
   @media (min-width: 481px) {
     display: none;
-
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
   }
   @media (min-width: 641px) {
     display: none;
-
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
   }
   @media (min-width: 961px) {
@@ -104,7 +102,7 @@ const EmailInput = styled.input`
   @media (max-width: 575.98px) {
     padding-left: 1em;
   }
-`
+`;
 
 const AddressContainer = styled.div`
   width: 100%;
@@ -115,7 +113,7 @@ const AddressContainer = styled.div`
   ${media.lessThan('medium')`
     flex-direction: column;
   `};
-`
+`;
 
 const ContactContainer = styled.div`
   width: 50%;
@@ -196,7 +194,7 @@ export const Footer = () => (
                   type='email'
                   aria-label='If you feel interested about our D-CEN, Pleases enter your email. We will feed the latest news to you'
                   required
-                  placeholder='Our newsletter subscription'
+                  placeholder="Our newsletter subscription"
                 />
                 <EmailButton>{content.emailButton}</EmailButton>
               </EmailForm>
@@ -269,4 +267,4 @@ export const Footer = () => (
       </Wrapper>
     </VisionBlock>
   </FooterContainer>
-)
+);

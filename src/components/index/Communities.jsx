@@ -1,11 +1,11 @@
 /* eslint-disable prettier/prettier */
 /* global tw */
-import React from 'react'
-import styled from 'react-emotion'
-import facebook from '../../images/logo/Facebook.png'
-import mediumDcen from '../../images/logo/Medium DCEN.png'
-import telegram from '../../images/logo/Telegram.png'
-import { Contact, FlexBox, Heading, OrangeSpan, Wrapper } from '../../styles'
+import React from 'react';
+import styled from 'react-emotion';
+import facebook from '../../images/logo/Facebook.png';
+import mediumDcen from '../../images/logo/Medium DCEN.png';
+import telegram from '../../images/logo/Telegram.png';
+import { Contact, FlexBox, Heading, OrangeSpan, Wrapper } from '../../styles';
 
 const CommunitiesImage = styled.img`
   border: 2px solid gray;
@@ -20,7 +20,7 @@ const CommunitiesImage = styled.img`
     cursor: pointer;
     border: 2px solid white;
   }
-`
+`;
 
 const FacebookImage = styled(CommunitiesImage)`
   margin-top: -4rem;
@@ -31,7 +31,7 @@ const FacebookImage = styled(CommunitiesImage)`
   &:hover {
     cursor: pointer;
   }
-`
+`;
 
 const CommunitiesContact = styled(Contact)`
   padding: 12px 24px;
@@ -39,7 +39,7 @@ const CommunitiesContact = styled(Contact)`
   @media (max-width: 575.98px) {
     padding: 6px 12px;
   }
-`
+`;
 
 const WraperContainer = styled(Wrapper)`
   height: 75vh;

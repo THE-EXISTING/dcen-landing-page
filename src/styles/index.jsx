@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 /* global tw */
 import styled from 'react-emotion'
 
@@ -6,7 +5,7 @@ const Heading = styled.h1`
   font-family: akrobat-bold, fantasy;
   font-size: 3.2rem;
   margin-bottom: 0;
-`
+`;
 
 const DcenContent = styled.div`
   width: 80%;
@@ -15,7 +14,7 @@ const DcenContent = styled.div`
   @media (max-width: 575.98px) {
     width: 90%;
   }
-`
+`;
 
 const Wrapper = styled.div`
   margin-left: auto;
@@ -35,21 +34,18 @@ const Wrapper = styled.div`
   @media (min-width: 1200px) {
     width: 70%;
   }
-`
+`;
 
 const FlexBox = styled.div`
   ${tw('justify-center items-center flex')};
 `
-
 const Hero = styled.div`
   ${tw('sm:w-full md:w-1/2')};
 `
-
 const Subtitle = styled.p`
   ${tw('text-lg text-white')};
   font-family: avenirnext-regular, fantasy;
 `
-
 const Logo = styled.img`
   margin-top: 2.2rem;
   float: left;
@@ -97,27 +93,16 @@ const Contact = styled.button`
     background-color: white;
     color: black;
   }
-`
+`;
 
 const OrangeSpan = styled.span`
   border-bottom: 4px solid #f29103;
   padding-bottom: 8px;
-`
+`;
 
 const BlueSpan = styled.span`
   border-bottom: 4px solid #2496ec;
   padding-bottom: 8px;
-`
+`;
 
-export {
-  Contact,
-  Hero,
-  Logo,
-  Subtitle,
-  OrangeSpan,
-  Wrapper,
-  FlexBox,
-  Heading,
-  DcenContent,
-  BlueSpan
-}
+export { Contact, Hero, Logo, Subtitle, OrangeSpan, Wrapper, FlexBox, Heading, DcenContent, BlueSpan };
