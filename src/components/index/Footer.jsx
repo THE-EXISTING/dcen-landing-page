@@ -10,12 +10,11 @@ import dCenWhite from '../../images/logo/logo_dcen_white.png'
 import { Contact, Hero, Wrapper } from '../../styles'
 import SVG from '../SVG'
 
-
 const VisionBlock = styled.div`
   ${tw('justify-center items-center flex z-50')};
   background-color: rgba(0, 0, 0, 0.7);
   height: inherit;
-`;
+`
 
 const FooterContainer = styled.div`
   background-image: ${props => `url(${props.img})`};
@@ -30,7 +29,7 @@ const FooterContainer = styled.div`
 const Logo = styled.img`
   margin-top: 0.45rem;
   width: 10%;
-`;
+`
 
 const FooterTextContainer = styled.div`
   display: flex;
@@ -61,7 +60,7 @@ const EmailButton = styled.button`
   height: inherit;
   border: none;
   cursor: pointer;
-`;
+`
 const EmailForm = styled.form`
   ${tw('w-full justify-center items-center flex')};
   /* text-align: start; */
@@ -73,17 +72,9 @@ const EmailForm = styled.form`
   @media (max-width: 575.98px) {
     display: none;
   }
-  @media (min-width: 481px) {
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* STYLES GO HERE */
     display: none;
-    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-  }
-  @media (min-width: 641px) {
-    display: none;
-    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-  }
-  @media (min-width: 961px) {
-    display: none;
-    /* tablet, landscape iPad, lo-res laptops ands desktops */
   }
 `
 
@@ -102,7 +93,7 @@ const EmailInput = styled.input`
   @media (max-width: 575.98px) {
     padding-left: 1em;
   }
-`;
+`
 
 const AddressContainer = styled.div`
   width: 100%;
@@ -113,7 +104,7 @@ const AddressContainer = styled.div`
   ${media.lessThan('medium')`
     flex-direction: column;
   `};
-`;
+`
 
 const ContactContainer = styled.div`
   width: 50%;
@@ -168,16 +159,10 @@ const CopyRightEmail = styled.div`
 `
 const LogoDcen = styled(Logo)`
   @media (max-width: 575.98px) {
-    width: 30%;
+    width: 25%;
   }
-  @media (min-width: 641px) {
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     width: 20%;
-
-    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-  }
-  @media (min-width: 961px) {
-    width: 20%;
-    /* tablet, landscape iPad, lo-res laptops ands desktops */
   }
 `
 
@@ -194,7 +179,7 @@ export const Footer = () => (
                   type='email'
                   aria-label='If you feel interested about our D-CEN, Pleases enter your email. We will feed the latest news to you'
                   required
-                  placeholder="Our newsletter subscription"
+                  placeholder='Our newsletter subscription'
                 />
                 <EmailButton>{content.emailButton}</EmailButton>
               </EmailForm>
@@ -267,4 +252,4 @@ export const Footer = () => (
       </Wrapper>
     </VisionBlock>
   </FooterContainer>
-);
+)
