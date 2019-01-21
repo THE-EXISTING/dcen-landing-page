@@ -2,7 +2,8 @@
 /* global tw */
 import React from 'react'
 import styled from 'react-emotion'
-import { Link } from 'react-scroll'
+import { Link, animateScroll as scroll } from 'react-scroll'
+
 import dCenWhite from '../images/logo/logo_dcen_white.png'
 import { Contact, Logo, Wrapper } from '../styles'
 
@@ -59,71 +60,79 @@ const ContactHeader = styled(Contact)`
     font-size: 1.5rem;
     padding: 8px 15px;
   }
-`;
-
-
-export const Navbar = props => (
-  <Navigator scrollTop={props.scrollTop}>
-    <Wrapper>
-      <div>
-        <Logo
-          src={dCenWhite}
-          alt='D-cen White Logo'
-          width={props.scrollTop < 60 ? 60 : 50}
-        />
-      </div>
-      <ContactHeader>Contact</ContactHeader>
-      <Menu>
-        <Link
-          to='commanders'
-          activeClass='active'
-          spy
-          smooth={'easeInQuad'}
-          duration={500}
-        >
-          Team
-        </Link>
-        <Link
-          to='services'
-          activeClass='active'
-          spy
-          smooth={'easeInQuad'}
-          duration={500}
-          offset={-50}
-        >
-          Services
-        </Link>
-        <Link
-          to='product'
-          activeClass='active'
-          spy
-          smooth={'easeInQuad'}
-          duration={500}
-          offset={-50}
-        >
-          Product
-        </Link>
-        <Link
-          to='communities'
-          activeClass='active'
-          spy
-          smooth={'easeInQuad'}
-          duration={500}
-          offset={-50}
-        >
-          Communities
-        </Link>
-        <Link
-          to='visions'
-          activeClass='active'
-          spy
-          smooth={'easeInQuad'}
-          duration={500}
-          offset={-50}
-        >
-          Vision
-        </Link>
-      </Menu>
-    </Wrapper>
-  </Navigator>
-)
+`
+export class Navbar extends React.Component {
+  constructor (props) {
+    super(props)
+  }
+  scrollToTop = () => {
+    scroll.scrollToTop()
+  }
+  render () {
+    return (
+      <Navigator scrollTop={this.props.scrollTop}>
+        <Wrapper>
+          <div onClick={this.scrollToTop}>
+            <Logo
+              src={dCenWhite}
+              alt='D-cen White Logo'
+              width={this.props.scrollTop < 60 ? 60 : 50}
+            />
+          </div>
+          <ContactHeader>Contact</ContactHeader>
+          <Menu>
+            <Link
+              to='commanders'
+              activeClass='active'
+              spy
+              smooth={'easeInQuad'}
+              duration={500}
+            >
+              Team
+            </Link>
+            <Link
+              to='services'
+              activeClass='active'
+              spy
+              smooth={'easeInQuad'}
+              duration={500}
+              offset={-50}
+            >
+              Services
+            </Link>
+            <Link
+              to='product'
+              activeClass='active'
+              spy
+              smooth={'easeInQuad'}
+              duration={500}
+              offset={-50}
+            >
+              Product
+            </Link>
+            <Link
+              to='communities'
+              activeClass='active'
+              spy
+              smooth={'easeInQuad'}
+              duration={500}
+              offset={-50}
+            >
+              Communities
+            </Link>
+            <Link
+              to='visions'
+              activeClass='active'
+              spy
+              smooth={'easeInQuad'}
+              duration={500}
+              offset={-50}
+            >
+              Vision
+            </Link>
+          </Menu>
+        </Wrapper>
+      </Navigator>
+    )
+  }
+}

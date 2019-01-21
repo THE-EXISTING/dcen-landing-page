@@ -53,7 +53,7 @@ const Subtitle = styled.p`
 const Logo = styled.img`
   margin-top: 2.2rem;
   float: left;
-  transition: 0.6s;
+  transition: 0;
   cursor: pointer;
   &:hover {
     color: #ffffff;
@@ -65,12 +65,6 @@ const Logo = styled.img`
     margin: 3rem;
   }
   @media (min-width: 576px) and (max-width: 767.98px) {
-    margin: 3rem;
-  }
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    margin: 3rem;
-  }
-  @media (min-width: 992px) and (max-width: 1199.98px) {
     margin: 3rem;
   }
   @media (min-width: 1200px) {
@@ -103,7 +97,6 @@ const Contact = styled.button`
     background-color: white;
     color: black;
   }
-
 `
 
 const OrangeSpan = styled.span`
