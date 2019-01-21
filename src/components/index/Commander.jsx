@@ -1,9 +1,11 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import styled from 'react-emotion'
 import { team } from '../../content/team'
 import { DcenContent, Heading, OrangeSpan, Wrapper } from '../../styles'
 import CommanderItem from '../common/CommanderItem'
 import Carousel from 'nuka-carousel'
+
 const CommanderContainer = styled.div`
   text-align: center;
   margin: 2rem 0 0 0;
@@ -12,7 +14,8 @@ const CommanderContainer = styled.div`
   justify-content: center;
   @media (max-width: 575.98px) {
     display: none;
-  }`
+  }
+`
 const CommanderContainerMobile = styled.div`
   display: none;
   text-align: center;
@@ -20,17 +23,29 @@ const CommanderContainerMobile = styled.div`
     display: block;
     margin-top: 3rem;
   }
-`;
+`
 
 const Content = styled.div`
   padding: 4rem 0 8rem 0;
-`;
+`
 
 export class Commander extends React.Component {
-  state = {
-    activeSlide: 0,
-  };
-  render() {
+  constructor (props) {
+    super(props)
+    this.state = {
+      slideIndex: 0,
+      length: 6,
+      wrapAround: false,
+      underlineHeader: false,
+      slidesToShow: 1,
+      cellAlign: 'left',
+      transitionMode: 'scroll',
+      heightMode: 'max',
+      withoutControls: true
+    }
+  }
+
+  render () {
     return (
       <Content>
         <Wrapper>
@@ -61,6 +76,6 @@ export class Commander extends React.Component {
           </CommanderContainerMobile>
         </Wrapper>
       </Content>
-    );
+    )
   }
 }

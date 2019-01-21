@@ -1,20 +1,23 @@
+/* eslint-disable prettier/prettier */
 /* global tw */
-import React from 'react';
-import styled from 'react-emotion';
-import { Link } from 'react-scroll';
-import dCenWhite from '../images/logo/logo_dcen_white.png';
-import { Contact, Logo, Wrapper } from '../styles';
+import React from 'react'
+import styled from 'react-emotion'
+import { Link, animateScroll as scroll } from 'react-scroll'
+import dCenWhite from '../images/logo/logo_dcen_white.png'
+import { Contact, Logo, Wrapper } from '../styles'
 
 const Navigator = styled.div`
   height: ${props => (props.scrollTop < 60 ? '80px' : '60px')};
   width: 100%;
   position: fixed;
-  background-color: ${props => (props.scrollTop < 60 ? 'transparent' : 'rgba(0, 0, 0,0.9)')};
+  background-color: ${props =>
+    props.scrollTop < 60 ? 'transparent' : 'rgba(0, 0, 0,0.9)'};
   font-family: akrobat-bold, fantasy;
   text-transform: uppercase;
   z-index: 99;
   transition: 0.6s;
-  box-shadow: ${props => (props.scrollTop < 60 ? 'none' : '0 11px 10px -5px rgba(50, 50, 50, 0.25)')};
+  box-shadow: ${props =>
+    props.scrollTop < 60 ? 'none' : '0 11px 10px -5px rgba(50, 50, 50, 0.25)'};
   a {
     margin-top: 2.4rem;
     font-size: 1.4rem;
@@ -56,6 +59,7 @@ const ContactHeader = styled(Contact)`
     padding: 8px 15px;
   }
 `
+const Linktotop = styled.div``
 export class Navbar extends React.Component {
   constructor (props) {
     super(props)
@@ -67,13 +71,13 @@ export class Navbar extends React.Component {
     return (
       <Navigator scrollTop={this.props.scrollTop}>
         <Wrapper>
-          <div onClick={this.scrollToTop}>
+          <Linktotop onClick={this.scrollToTop}>
             <Logo
               src={dCenWhite}
               alt='D-cen White Logo'
               width={this.props.scrollTop < 60 ? 60 : 50}
             />
-          </div>
+          </Linktotop>
           <ContactHeader>Contact</ContactHeader>
           <Menu>
             <Link
