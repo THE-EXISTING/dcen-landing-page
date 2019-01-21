@@ -1,17 +1,17 @@
 /* eslint-disable prettier/prettier */
 /* global tw */
 
+import media from 'emotion-media-query'
 import React, { Component } from 'react'
 import styled from 'react-emotion'
-import media from 'emotion-media-query'
 import Facebook from '../../images/icon/Facebook.svg'
 import Github from '../../images/icon/Github.svg'
 import LinkedIn from '../../images/icon/LinkedIn.svg'
 
 const CommanderItemContainer = styled.div`
-  font-family: avenirnext-medium, fantasy;
+  font-family: akrobat-regular, fantasy;
   position: relative;
-  width: 210px;
+  width: 200px;
   box-sizing: border-box;
   padding: 2rem;
   margin: 1rem;
@@ -23,12 +23,10 @@ const CommanderItemContainer = styled.div`
   z-index: 2;
   box-shadow: 0 0 0 1px gray;
   border-radius: 4px;
-
-  ${media.lessThan('medium')`
+  @media (max-width: 575.98px) {
     margin: 5px auto;
-    height: 443px;
-  `};
-
+    height: 300px;
+  }
   &:hover {
     box-shadow: 0 0 0 2px #f29103;
     border-radius: 4px;
@@ -46,24 +44,7 @@ const TeamImg = styled.img`
 `
 
 const FontAvenirContainer = styled.div`
-  font-family: avenirnext-medium, fantasy;
   letter-spacing: 1px;
-`
-
-const ImgOverlay = styled.img`
-  position: absolute;
-  width: 200px;
-  right: -100px;
-  bottom: 0;
-  opacity: 0.02;
-`
-
-const ImgOverlayMobile = styled(ImgOverlay)`
-  display: none;
-
-  ${media.lessThan('medium')`
-    display: block;
-  `};
 `
 
 const SocialContainer = styled.div`
@@ -104,7 +85,6 @@ class CommanderItem extends Component {
   }
 
   openNewTab = url => {
-    console.log('url: ', url)
     window.open(url, '_blank')
   }
 
@@ -125,30 +105,38 @@ class CommanderItem extends Component {
     return (
       <CommanderItemContainer
         className='active-border'
+        onFocus={this.handleOnMouseHover}
         onMouseOver={this.handleOnMouseHover}
         onMouseLeave={this.handleOnMouseLeave}
       >
         <div>
-          <TeamImg src={img} isHover={isHover} activeSlide={activeSlide} />
+          <TeamImg
+            src={img}
+            alt={name + ' picture'}
+            isHover={isHover}
+            activeSlide={activeSlide}
+          />
           <FontAvenirContainer>
-            <p style={{ fontSize: '1.6rem', marginBottom: '0' }}>{nickname}</p>
-            <p
+            <h1
               style={{
-                fontSize: '1.4rem',
-                marginTop: '2px'
+                fontSize: '1.6rem',
+                marginBottom: '0',
+                fontFamily: 'avenirnext-medium'
               }}
             >
-              {name}
-            </p>
-            <p style={{ fontSize: '1.6rem', letterSpacing: '1.5px' }}>
+              {nickname}
+            </h1>
+            <h2 style={{ fontSize: '1.4rem', marginTop: '2px' }}>{name}</h2>
+            <p
+              style={{
+                fontSize: '2rem',
+                letterSpacing: '1.5px',
+                fontFamily: 'avenirnext-demi'
+              }}
+            >
               {position}
             </p>
           </FontAvenirContainer>
-
-          {/* <p style={{ opacity: '0.7' }}>
-            {position} <br />
-            Commander
-          </p> */}
         </div>
         <SocialContainer>
           {social.map((item, i) => (

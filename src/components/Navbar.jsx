@@ -2,15 +2,14 @@
 /* global tw */
 import React from 'react'
 import styled from 'react-emotion'
+import { Link } from 'react-scroll'
 import dCenWhite from '../images/logo/logo_dcen_white.png'
 import { Contact, Logo, Wrapper } from '../styles'
-import { Link } from 'react-scroll'
 
 const Navigator = styled.div`
   height: ${props => (props.scrollTop < 60 ? '80px' : '60px')};
   width: 100%;
   position: fixed;
-
   background-color: ${props =>
     props.scrollTop < 60 ? 'transparent' : 'rgba(0, 0, 0,0.9)'};
   font-family: akrobat-bold, fantasy;
@@ -18,7 +17,7 @@ const Navigator = styled.div`
   z-index: 99;
   transition: 0.6s;
   box-shadow: ${props =>
-    props.scrollTop < 60 ? 'none' : '0 11px 10px -5px rgba(50, 50, 50, 0.5)'};
+    props.scrollTop < 60 ? 'none' : '0 11px 10px -5px rgba(50, 50, 50, 0.25)'};
   a {
     margin-top: 2.4rem;
     font-size: 1.4rem;
@@ -34,10 +33,19 @@ const Navigator = styled.div`
       border-bottom: 2px solid #e79627;
       padding-bottom: 0.2rem;
     }
+    &.active {
+      color: #ffffff;
+      cursor: pointer;
+      border-bottom: 2px solid #e79627;
+      padding-bottom: 0.2rem;
+    }
     @media (max-width: 575.98px) {
       margin-right: 0;
       padding: 8px 12px;
     }
+  }
+  @media (max-width: 575.98px) {
+    height: ${props => (props.scrollTop < 60 ? '45px' : '50px')};
   }
 `
 
@@ -46,27 +54,42 @@ const Menu = styled.div`
     display: none;
   }
 `
+const ContactHeader = styled(Contact)`
+  @media (max-width: 575.98px) {
+    font-size: 1.5rem;
+    padding: 8px 15px;
+  }
+`;
 
-export const Navbar = ({ scrollTop }) => (
-  <Navigator scrollTop={scrollTop}>
+
+export const Navbar = props => (
+  <Navigator scrollTop={props.scrollTop}>
     <Wrapper>
       <div>
         <Logo
           src={dCenWhite}
           alt='D-cen White Logo'
-          width={scrollTop < 60 ? 60 : 50}
+          width={props.scrollTop < 60 ? 60 : 50}
         />
       </div>
-      <Contact>Contact</Contact>
+      <ContactHeader>Contact</ContactHeader>
       <Menu>
-        <Link to=''>Team</Link>
+        <Link
+          to='commanders'
+          activeClass='active'
+          spy
+          smooth={'easeInQuad'}
+          duration={500}
+        >
+          Team
+        </Link>
         <Link
           to='services'
           activeClass='active'
           spy
-          smooth
+          smooth={'easeInQuad'}
           duration={500}
-          offset={-55}
+          offset={-50}
         >
           Services
         </Link>
@@ -74,9 +97,9 @@ export const Navbar = ({ scrollTop }) => (
           to='product'
           activeClass='active'
           spy
-          smooth
+          smooth={'easeInQuad'}
           duration={500}
-          offset={-55}
+          offset={-50}
         >
           Product
         </Link>
@@ -84,19 +107,19 @@ export const Navbar = ({ scrollTop }) => (
           to='communities'
           activeClass='active'
           spy
-          smooth
+          smooth={'easeInQuad'}
           duration={500}
-          offset={-55}
+          offset={-50}
         >
           Communities
         </Link>
         <Link
-          activeClass='active'
           to='visions'
+          activeClass='active'
           spy
-          smooth
+          smooth={'easeInQuad'}
           duration={500}
-          offset={-55}
+          offset={-50}
         >
           Vision
         </Link>

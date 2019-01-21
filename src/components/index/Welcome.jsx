@@ -1,14 +1,14 @@
-/* eslint-disable prettier/prettier */
 /* global tw */
-import React from 'react'
-import styled from 'react-emotion'
-import { colors } from '../../../tailwind'
-import { content } from '../../content/website'
-import welcomeBackground from '../../images/background/img_main_background.png'
-import dCenOverview from '../../images/detail/img_dcen_overview.png'
-import dCenOrange from '../../images/logo/logo_dcen.png'
-import { FlexBox, Hero, Subtitle, Wrapper } from '../../styles'
-import SVG from '../SVG'
+import React from 'react';
+import styled from 'react-emotion';
+import { Link } from 'react-scroll/modules';
+import { colors } from '../../../tailwind';
+import { content } from '../../content/website';
+import welcomeBackground from '../../images/background/img_main_background.png';
+import dCenOverview from '../../images/detail/img_dcen_overview.png';
+import dCenOrange from '../../images/logo/logo_dcen.png';
+import { FlexBox, Hero, Subtitle, Wrapper } from '../../styles';
+import SVG from '../SVG';
 
 const WelcomeSubtitle = styled(Subtitle)`
   font-size: 1.8rem;
@@ -18,7 +18,7 @@ const WelcomeSubtitle = styled(Subtitle)`
     margin-top: 4rem;
     text-align: center;
   }
-`
+`;
 
 const WelcomeWrapper = styled(Wrapper)`
   display: flex;
@@ -26,7 +26,7 @@ const WelcomeWrapper = styled(Wrapper)`
   @media (max-width: 575.98px) {
     margin-bottom: 0;
   }
-`
+`;
 
 const WelcomeHero = styled(Hero)`
   @media (max-width: 575.98px) {
@@ -36,13 +36,13 @@ const WelcomeHero = styled(Hero)`
     flex-wrap: wrap;
     margin-bottom: 4rem;
   }
-`
+`;
 
 const DcenOrangeImage = styled.img`
   @media (max-width: 575.98px) {
     width: 50%;
   }
-`
+`;
 
 const EmailInput = styled.input`
   font-family: avenirnext-regular, fantasy;
@@ -59,7 +59,7 @@ const EmailInput = styled.input`
   @media (max-width: 575.98px) {
     padding-left: 1em;
   }
-`
+`;
 
 const EmailButton = styled.button`
   font-family: akrobat-bold, fantasy;
@@ -71,7 +71,7 @@ const EmailButton = styled.button`
   width: 10rem;
   height: inherit;
   border: none;
-`
+`;
 
 const EmailForm = styled.form`
   ${tw('w-full justify-center items-center flex')};
@@ -86,24 +86,7 @@ const EmailForm = styled.form`
     margin-right: auto;
     margin-left: auto;
   }
-`
-const ScrollDownContainer = styled.div`
-  position: absolute;
-  top: 70rem;
-  cursor: pointer;
-  z-index: 2;
-  animation: MoveUpDown 0.5s infinite alternate;
-  opacity: 0.6;
-
-  @keyframes MoveUpDown {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-10px);
-    }
-  }
-`
+`;
 
 const Box = styled.div`
   margin-left: auto;
@@ -113,19 +96,19 @@ const Box = styled.div`
     width: 90%;
     margin-top: 3.2rem;
   }
-`
+`;
 
 export const Welcome = () => (
   <FlexBox
     style={{
       backgroundImage: `url(${welcomeBackground})`,
       backgroundSize: 'cover',
-      height: '100vh'
+      height: '100vh',
     }}
   >
-    <WelcomeWrapper style={{ marginTop: '-10rem' }}>
+    <WelcomeWrapper>
       <WelcomeHero>
-        <DcenOrangeImage src={dCenOrange} alt='D-cen Orange Logo' />
+        <DcenOrangeImage src={dCenOrange} alt="D-cen Orange Logo" />
         <WelcomeSubtitle>
           {content.frontSubtitle}
           <br />
@@ -135,32 +118,34 @@ export const Welcome = () => (
         </WelcomeSubtitle>
       </WelcomeHero>
       <Hero>
-        <img
-          src={dCenOverview}
-          style={{ maxWidth: '100%' }}
-          alt='D-cen Product Overview'
-        />
+        <img src={dCenOverview} style={{ maxWidth: '100%' }} alt="D-cen Product Overview" />
       </Hero>
       <Box>
         <EmailForm>
           <EmailInput
-            type='email'
+            aria-label="If you feel interested about our D-CEN, Pleases enter your email. We will feed the latest news to you"
+            type="email"
             required
-            placeholder='Our newsletter subscription'
+            placeholder="Our newsletter subscription"
           />
           <EmailButton>{content.emailButton}</EmailButton>
         </EmailForm>
       </Box>
     </WelcomeWrapper>
-    <ScrollDownContainer>
+    <Link to="visions" spy smooth={'easeInQuad'} duration={500} offset={-50}>
       <SVG
-        icon='scrollDown'
+        icon="scrollDown"
+        cursor={'pointer'}
         hiddenMobile
-        fill={colors.white}
+        fill={colors.grey}
+        hoverFill={colors.white}
         width={16}
-        left='50%'
-        top='80%'
+        left="50%"
+        top="90%"
+        transitionDuration={'500ms'}
+        animation={'MoveUpDown 0.5s infinite alternate'}
+        title={'You could click to scroll down to vision section.'}
       />
-    </ScrollDownContainer>
+    </Link>
   </FlexBox>
-)
+);

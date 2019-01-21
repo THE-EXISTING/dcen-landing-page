@@ -3,20 +3,20 @@
 import React from 'react'
 import styled from 'react-emotion'
 import { content } from '../../content/website'
-import appStore from '../../images/logo/appstore.png'
-import dellet from '../../images/logo/dellet.png'
-import googlePlay from '../../images/logo/googleplay.png'
 import imgArch from '../../images/detail/img_architecture_chart.png'
 import timeline from '../../images/detail/img_delete_timeline.png'
 import delletproduct from '../../images/detail/img_dellet_product.png'
+import appStore from '../../images/logo/appstore.png'
+import dellet from '../../images/logo/dellet.png'
+import googlePlay from '../../images/logo/googleplay.png'
 
 import {
+  BlueSpan,
   DcenContent,
   Heading,
+  Hero,
   OrangeSpan,
-  Wrapper,
-  BlueSpan,
-  Hero
+  Wrapper
 } from '../../styles'
 
 const ProductHeading = styled.h2`
@@ -42,8 +42,10 @@ const ProductParagraph = styled.p`
 
 const ProductImage = styled.img`
   display: block;
+  height: 100%;
   @media (max-width: 575.98px) {
     width: 20rem;
+    height: 100%;
   }
 `
 const ProductImageArch = styled.img`
@@ -55,9 +57,9 @@ const ProductImageArch = styled.img`
   }
 
   @media (min-width: 320px) {
-    /* smartphones, iPhone, portrait 480x320 phones */
+    /* smart phones, iPhone, portrait 480x320 phones */
     height: 100%;
-    width: 100%;
+    width: 300px;
   }
   @media (min-width: 481px) {
     height: 100%;
@@ -86,7 +88,7 @@ const ProductImageArch = styled.img`
   }
 `
 
-export const Product = () => (
+export const Product = ({ height }) => (
   <div
     style={{
       backgroundColor: '#1A1A18',
@@ -104,12 +106,7 @@ export const Product = () => (
             <span style={{ color: 'orange' }}>F</span>irst Product
           </ProductHeading>
           <div style={{ height: '100%', width: '100%' }}>
-            <ProductImage
-              src={dellet}
-              role={'logo'}
-              alt={'Dellet Logo'}
-              style={{ height: '50%' }}
-            />
+            <ProductImage src={dellet} alt={'Dellet Logo'} />
           </div>
           <ProductParagraph>{content.productDescription}</ProductParagraph>
         </ProductContent>
@@ -123,7 +120,7 @@ export const Product = () => (
             />
             <ProductImage
               style={{
-                marginTop: window.outerHeight > 1000 ? '5.5rem' : '7.5rem',
+                marginTop: height > 1000 ? '5.5rem' : '7.5rem',
                 cursor: 'pointer'
               }}
               src={appStore}
