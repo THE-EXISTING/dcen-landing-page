@@ -9,7 +9,10 @@ const CenterContent = styled.div`
   justify-content: center;
   font-family: avenirnext-medium, fantasy;
   font-size: 24pt;
-`
+  @media (max-width: 575.98px) {
+    font-size: 16pt;
+  }
+`;
 const Color = styled.div`
   color: #f29103;
 `

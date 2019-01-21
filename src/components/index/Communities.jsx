@@ -41,8 +41,15 @@ const CommunitiesContact = styled(Contact)`
   }
 `;
 
+const WraperContainer = styled(Wrapper)`
+  height: 75vh;
+  @media (max-width: 575.98px) {
+    height: 50vh;
+  }
+`
+
 export const Communities = () => (
-  <Wrapper style={{ height: '75vh' }}>
+  <WraperContainer>
     <FlexBox style={{ height: '-webkit-fill-available', flexWrap: 'wrap' }}>
       <FlexBox style={{ width: '100%' }}>
         <Heading>
@@ -54,18 +61,18 @@ export const Communities = () => (
           src={mediumDcen}
           style={{ marginRight: '2rem' }}
           alt={'Medium x DCEN'}
-          role="button"
+          role='button'
         />
         <CommunitiesImage
           src={telegram}
           alt={'Telegram x DCEN'}
-          role="button"
+          role='button'
         />
       </FlexBox>
       <FlexBox style={{ width: '100%' }}>
-        <FacebookImage src={facebook} alt={'Facebook x DCEN'} role="button" />
+        <FacebookImage src={facebook} alt={'Facebook x DCEN'} role='button' />
       </FlexBox>
       <CommunitiesContact>Contact</CommunitiesContact>
     </FlexBox>
-  </Wrapper>
-);
+  </WraperContainer>
+)

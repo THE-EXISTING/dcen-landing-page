@@ -1,5 +1,5 @@
 /* global tw */
-import styled from 'react-emotion';
+import styled from 'react-emotion'
 
 const Heading = styled.h1`
   font-family: akrobat-bold, fantasy;
@@ -38,21 +38,18 @@ const Wrapper = styled.div`
 
 const FlexBox = styled.div`
   ${tw('justify-center items-center flex')};
-`;
-
+`
 const Hero = styled.div`
   ${tw('sm:w-full md:w-1/2')};
-`;
-
+`
 const Subtitle = styled.p`
   ${tw('text-lg text-white')};
   font-family: avenirnext-regular, fantasy;
-`;
-
+`
 const Logo = styled.img`
   margin-top: 2.2rem;
   float: left;
-  transition: 0.6s;
+  transition: 0;
   cursor: pointer;
   &:hover {
     color: #ffffff;
@@ -60,7 +57,16 @@ const Logo = styled.img`
     border-bottom: 2px solid #e79627;
     padding-bottom: 0.3rem;
   }
-`;
+  @media (max-width: 575.98px) {
+    margin: 3rem;
+  }
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    margin: 3rem;
+  }
+  @media (min-width: 1200px) {
+    margin-top: 2.2rem;
+  }
+`
 
 const Contact = styled.button`
   ${tw('text-white')};

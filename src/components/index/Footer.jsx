@@ -1,13 +1,15 @@
+/* eslint-disable prettier/prettier */
 /* global tw */
-import media from 'emotion-media-query';
-import React from 'react';
-import styled from 'react-emotion';
-import { colors } from '../../../tailwind';
-import { content } from '../../content/website';
-import FooterWallpaper from '../../images/detail/img_footer_background.png';
-import dCenWhite from '../../images/logo/logo_dcen_white.png';
-import { Contact, Hero, Wrapper } from '../../styles';
-import SVG from '../SVG';
+import media from 'emotion-media-query'
+import React from 'react'
+import styled from 'react-emotion'
+import { colors } from '../../../tailwind'
+import { content } from '../../content/website'
+import FooterWallpaper from '../../images/detail/img_footer_background.png'
+import dCenWhite from '../../images/logo/logo_dcen_white.png'
+import { Contact, Hero, Wrapper } from '../../styles'
+import SVG from '../SVG'
+
 
 const VisionBlock = styled.div`
   ${tw('justify-center items-center flex z-50')};
@@ -21,8 +23,10 @@ const FooterContainer = styled.div`
   font-family: avenirnext-medium, fantasy;
   background-size: cover;
   width: 100%;
-`;
-
+  @media (max-width: 575.98px) {
+    height: 100%;
+  }
+`
 const Logo = styled.img`
   margin-top: 0.45rem;
   width: 10%;
@@ -30,20 +34,21 @@ const Logo = styled.img`
 
 const FooterTextContainer = styled.div`
   display: flex;
+  padding: 5rem 0 0 0;
   align-items: flex-start;
   max-width: 984px;
   z-index: 2;
-  ${media.lessThan('medium')`
+  @media (max-width: 575.98px) {
     padding: 2.8rem 2rem;
-  `};
-`;
+  }
+`
 
 const FooterContent = styled.div`
   margin-left: 2.8rem;
   width: 80%;
   display: flex;
   flex-wrap: wrap;
-`;
+`
 
 const EmailButton = styled.button`
   font-family: akrobat-bold, fantasy;
@@ -66,8 +71,21 @@ const EmailForm = styled.form`
   background-color: white;
   border-radius: 4px;
   @media (max-width: 575.98px) {
+    display: none;
   }
-`;
+  @media (min-width: 481px) {
+    display: none;
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  }
+  @media (min-width: 641px) {
+    display: none;
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  }
+  @media (min-width: 961px) {
+    display: none;
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+  }
+`
 
 const EmailInput = styled.input`
   font-family: avenirnext-regular, fantasy;
@@ -104,7 +122,7 @@ const ContactContainer = styled.div`
     margin-top: 2.2rem;
     align-items: flex-start;
   `};
-`;
+`
 
 const SVGContainer = styled.div`
   display: inline-block;
@@ -113,14 +131,17 @@ const SVGContainer = styled.div`
   & > svg {
     margin-right: 1.2rem;
   }
-`;
+`
 
 const ContactFooter = styled(Contact)`
   font-family: avenirnext-medium, fantasy;
   font-size: 1.4rem;
   margin-top: 0;
   padding: 0 36px;
-`;
+  @media (max-width: 575.98px) {
+    padding: 4px 8px;
+  }
+`
 
 const CopyRightsContainer = styled.div`
   width: 100%;
@@ -135,26 +156,43 @@ const CopyRightsContainer = styled.div`
       align-self: flex-end;
     }
   `};
-`;
+`
 
-const CopyRightEmail = styled.p`
+const CopyRightEmail = styled.div`
   font-family: avenirnext-medium, fantasy;
   font-size: 2rem;
   margin-top: 1rem;
-`;
+  @media (max-width: 575.98px) {
+    margin-top: 3rem;
+  }
+`
+const LogoDcen = styled(Logo)`
+  @media (max-width: 575.98px) {
+    width: 30%;
+  }
+  @media (min-width: 641px) {
+    width: 20%;
+
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  }
+  @media (min-width: 961px) {
+    width: 20%;
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+  }
+`
 
 export const Footer = () => (
   <FooterContainer img={FooterWallpaper}>
     <VisionBlock>
       <Wrapper>
         <FooterTextContainer>
-          <Logo src={dCenWhite} alt="D-CEN White Logo" />
+          <LogoDcen src={dCenWhite} alt='D-CEN White Logo' />
           <FooterContent>
             <AddressContainer>
               <EmailForm>
                 <EmailInput
-                  type="email"
-                  aria-label="If you feel interested about our D-CEN, Pleases enter your email. We will feed the latest news to you"
+                  type='email'
+                  aria-label='If you feel interested about our D-CEN, Pleases enter your email. We will feed the latest news to you'
                   required
                   placeholder="Our newsletter subscription"
                 />
@@ -163,7 +201,7 @@ export const Footer = () => (
               <ContactContainer>
                 <SVGContainer>
                   <SVG
-                    icon="tumblrCircle"
+                    icon='tumblrCircle'
                     cursor={'pointer'}
                     fill={colors['orange-lightest']}
                     hoverFill={colors.white}
@@ -173,7 +211,7 @@ export const Footer = () => (
                     title={'You could click to go to our Tumblr.'}
                   />
                   <SVG
-                    icon="facebookCircle"
+                    icon='facebookCircle'
                     cursor={'pointer'}
                     fill={colors['orange-lightest']}
                     hoverFill={colors.white}
@@ -183,7 +221,7 @@ export const Footer = () => (
                     title={'You could click to go to our Facebook.'}
                   />
                   <SVG
-                    icon="mediumCircle"
+                    icon='mediumCircle'
                     cursor={'pointer'}
                     fill={colors['orange-lightest']}
                     hoverFill={colors.white}
@@ -197,12 +235,14 @@ export const Footer = () => (
               </ContactContainer>
             </AddressContainer>
             <CopyRightsContainer>
-              <Hero>
-                <p>© 2020 DCEN. All Rights Reserved</p>
-              </Hero>
-              <Hero style={{ display: 'inline-flex', justifyContent: 'flex-end' }}>
+              <div>
+                <div>© 2020 DCEN. All Rights Reserved</div>
+              </div>
+              <div
+                style={{ display: 'inline-flex', justifyContent: 'flex-end' }}
+              >
                 <SVG
-                  icon="Email"
+                  icon='Email'
                   fill={colors.white}
                   hoverFill={colors.white}
                   top={'-28%'}
@@ -212,7 +252,7 @@ export const Footer = () => (
                 />
                 <CopyRightEmail>contact@dcen.io</CopyRightEmail>
                 <SVG
-                  icon="IPFS"
+                  icon='IPFS'
                   fill={colors.white}
                   width={48}
                   left={'9.5%'}
@@ -220,7 +260,7 @@ export const Footer = () => (
                   position={'relative'}
                   title={'Our product hosted by IPFS.'}
                 />
-              </Hero>
+              </div>
             </CopyRightsContainer>
           </FooterContent>
         </FooterTextContainer>

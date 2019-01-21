@@ -1,11 +1,11 @@
 /* global tw */
 
-import media from 'emotion-media-query';
-import React, { Component } from 'react';
-import styled from 'react-emotion';
-import Facebook from '../../images/icon/Facebook.svg';
-import Github from '../../images/icon/Github.svg';
-import LinkedIn from '../../images/icon/LinkedIn.svg';
+import media from 'emotion-media-query'
+import React, { Component } from 'react'
+import styled from 'react-emotion'
+import Facebook from '../../images/icon/Facebook.svg'
+import Github from '../../images/icon/Github.svg'
+import LinkedIn from '../../images/icon/LinkedIn.svg'
 
 const CommanderItemContainer = styled.div`
   font-family: akrobat-regular, fantasy;
@@ -22,11 +22,10 @@ const CommanderItemContainer = styled.div`
   z-index: 2;
   box-shadow: 0 0 0 1px gray;
   border-radius: 4px;
-  ${media.lessThan('medium')`
+  @media (max-width: 575.98px) {
     margin: 5px auto;
-    height: 443px;
-  `};
-
+    height: 300px;
+  }
   &:hover {
     box-shadow: 0 0 0 2px #f29103;
     border-radius: 4px;
@@ -45,7 +44,7 @@ const TeamImg = styled.img`
 
 const FontAvenirContainer = styled.div`
   letter-spacing: 1px;
-`;
+`
 
 const SocialContainer = styled.div`
   flex: 1;
@@ -85,8 +84,8 @@ class CommanderItem extends Component {
   };
 
   openNewTab = url => {
-    window.open(url, '_blank');
-  };
+    window.open(url, '_blank')
+  }
 
   renderIcon = index => {
     if (index === 0) {
@@ -104,7 +103,7 @@ class CommanderItem extends Component {
 
     return (
       <CommanderItemContainer
-        className="active-border"
+        className='active-border'
         onFocus={this.handleOnMouseHover}
         onMouseOver={this.handleOnMouseHover}
         onMouseLeave={this.handleOnMouseLeave}
@@ -116,7 +115,7 @@ class CommanderItem extends Component {
               style={{
                 fontSize: '1.6rem',
                 marginBottom: '0',
-                fontFamily: 'avenirnext-medium',
+                fontFamily: 'avenirnext-medium'
               }}
             >
               {nickname}
@@ -126,7 +125,7 @@ class CommanderItem extends Component {
               style={{
                 fontSize: '2rem',
                 letterSpacing: '1.5px',
-                fontFamily: 'avenirnext-demi',
+                fontFamily: 'avenirnext-demi'
               }}
             >
               {position}

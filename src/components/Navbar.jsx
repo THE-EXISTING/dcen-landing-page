@@ -41,38 +41,93 @@ const Navigator = styled.div`
       padding: 8px 12px;
     }
   }
-`;
-
+  @media (max-width: 575.98px) {
+    height: ${props => (props.scrollTop < 60 ? '45px' : '50px')};
+  }
+`
 const Menu = styled.div`
   @media (max-width: 575.98px) {
     display: none;
   }
-`;
-
-export const Navbar = props => (
-  <Navigator scrollTop={props.scrollTop}>
-    <Wrapper>
-      <div>
-        <Logo src={dCenWhite} alt="D-cen White Logo" width={props.scrollTop < 60 ? 60 : 50} />
-      </div>
-      <Contact>Contact</Contact>
-      <Menu>
-        <Link to="commanders" activeClass="active" spy smooth={'easeInQuad'} duration={500}>
-          Team
-        </Link>
-        <Link to="services" activeClass="active" spy smooth={'easeInQuad'} duration={500} offset={-50}>
-          Services
-        </Link>
-        <Link to="product" activeClass="active" spy smooth={'easeInQuad'} duration={500} offset={-50}>
-          Product
-        </Link>
-        <Link to="communities" activeClass="active" spy smooth={'easeInQuad'} duration={500} offset={-50}>
-          Communities
-        </Link>
-        <Link to="visions" activeClass="active" spy smooth={'easeInQuad'} duration={500} offset={-50}>
-          Vision
-        </Link>
-      </Menu>
-    </Wrapper>
-  </Navigator>
-);
+`
+const ContactHeader = styled(Contact)`
+  @media (max-width: 575.98px) {
+    font-size: 1.5rem;
+    padding: 8px 15px;
+  }
+`
+export class Navbar extends React.Component {
+  constructor (props) {
+    super(props)
+  }
+  scrollToTop = () => {
+    scroll.scrollToTop()
+  }
+  render () {
+    return (
+      <Navigator scrollTop={this.props.scrollTop}>
+        <Wrapper>
+          <div onClick={this.scrollToTop}>
+            <Logo
+              src={dCenWhite}
+              alt='D-cen White Logo'
+              width={this.props.scrollTop < 60 ? 60 : 50}
+            />
+          </div>
+          <ContactHeader>Contact</ContactHeader>
+          <Menu>
+            <Link
+              to='commanders'
+              activeClass='active'
+              spy
+              smooth={'easeInQuad'}
+              duration={500}
+            >
+              Team
+            </Link>
+            <Link
+              to='services'
+              activeClass='active'
+              spy
+              smooth={'easeInQuad'}
+              duration={500}
+              offset={-50}
+            >
+              Services
+            </Link>
+            <Link
+              to='product'
+              activeClass='active'
+              spy
+              smooth={'easeInQuad'}
+              duration={500}
+              offset={-50}
+            >
+              Product
+            </Link>
+            <Link
+              to='communities'
+              activeClass='active'
+              spy
+              smooth={'easeInQuad'}
+              duration={500}
+              offset={-50}
+            >
+              Communities
+            </Link>
+            <Link
+              to='visions'
+              activeClass='active'
+              spy
+              smooth={'easeInQuad'}
+              duration={500}
+              offset={-50}
+            >
+              Vision
+            </Link>
+          </Menu>
+        </Wrapper>
+      </Navigator>
+    )
+  }
+}
