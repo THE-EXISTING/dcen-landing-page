@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* global tw */
 
 import media from 'emotion-media-query'
@@ -30,7 +31,7 @@ const CommanderItemContainer = styled.div`
     box-shadow: 0 0 0 2px #f29103;
     border-radius: 4px;
   }
-`;
+`
 
 const TeamImg = styled.img`
   width: 130px;
@@ -40,7 +41,7 @@ const TeamImg = styled.img`
   margin: auto;
   transition: all 0.3s;
   border: ${props => (props.isHover ? `2px solid #f29103` : `2px solid white`)};
-`;
+`
 
 const FontAvenirContainer = styled.div`
   letter-spacing: 1px;
@@ -53,7 +54,7 @@ const SocialContainer = styled.div`
   align-items: flex-end;
   margin-top: 1rem;
   z-index: 2;
-`;
+`
 
 const ImgSocial = styled.img`
   margin: 0.5rem;
@@ -65,23 +66,23 @@ const ImgSocial = styled.img`
   &:hover {
     opacity: 1;
   }
-`;
+`
 class CommanderItem extends Component {
   state = {
-    isHover: false,
-  };
+    isHover: false
+  }
 
   handleOnMouseHover = () => {
     this.setState({
-      isHover: true,
-    });
-  };
+      isHover: true
+    })
+  }
 
   handleOnMouseLeave = () => {
     this.setState({
-      isHover: false,
-    });
-  };
+      isHover: false
+    })
+  }
 
   openNewTab = url => {
     window.open(url, '_blank')
@@ -89,27 +90,32 @@ class CommanderItem extends Component {
 
   renderIcon = index => {
     if (index === 0) {
-      return Facebook;
+      return Facebook
     } else if (index === 1) {
-      return LinkedIn;
+      return LinkedIn
     } else if (index === 2) {
-      return Github;
+      return Github
     }
-  };
+  }
 
-  render() {
-    const { img, nickname, name, position, social, activeSlide } = this.props;
-    const { isHover } = this.state;
+  render () {
+    const { img, nickname, name, position, social, activeSlide } = this.props
+    const { isHover } = this.state
 
     return (
       <CommanderItemContainer
-        className='active-border'
+        className={'active-border'}
         onFocus={this.handleOnMouseHover}
         onMouseOver={this.handleOnMouseHover}
         onMouseLeave={this.handleOnMouseLeave}
       >
         <div>
-          <TeamImg src={img} alt={name + ' picture'} isHover={isHover} activeSlide={activeSlide} />
+          <TeamImg
+            src={img}
+            alt={name + ' picture'}
+            isHover={isHover}
+            activeSlide={activeSlide}
+          />
           <FontAvenirContainer>
             <h1
               style={{
@@ -134,14 +140,19 @@ class CommanderItem extends Component {
         </div>
         <SocialContainer>
           {social.map((item, i) => (
-            <ImgSocial key={item} src={this.renderIcon(i)} alt="" onClick={() => this.openNewTab(item)} />
+            <ImgSocial
+              key={item}
+              src={this.renderIcon(i)}
+              alt=''
+              onClick={() => this.openNewTab(item)}
+            />
           ))}
         </SocialContainer>
         {/* {isHover && <ImgOverlay src='/static/Icon/Mascot.svg' alt='' />}
         <ImgOverlayMobile src='/static/Icon/Mascot.svg' alt='' />  */}
       </CommanderItemContainer>
-    );
+    )
   }
 }
 
-export default CommanderItem;
+export default CommanderItem

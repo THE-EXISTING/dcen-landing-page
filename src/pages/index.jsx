@@ -1,7 +1,6 @@
-
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react'
-import { Element, scroll } from 'react-scroll'
+import { Element } from 'react-scroll'
 import {
   Communities,
   Contact,
@@ -63,8 +62,8 @@ class Index extends Component {
           <br />
         </div>
       </React.Fragment>
-    );
+    )
   }
 }
 
-export default Index;
+export default Index
